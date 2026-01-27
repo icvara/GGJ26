@@ -4,6 +4,8 @@ extends Node3D
 
 signal newplayer_join(id)
 
+var player_status = [0,0,0,0]
+
 func _physics_process(delta: float) -> void:
 
 	if Input.is_joy_button_pressed(0, 0):
@@ -17,7 +19,9 @@ func _physics_process(delta: float) -> void:
 		
 		
 func invoke_player(ID):
-	var newplayer = player_scene.instantiate()
-	newplayer.playerID = ID
-	add_child(newplayer)
-	newplayer_join.emit(ID)
+	if player_status[ID] == 0:
+		player_status[ID] = 1
+		var newplayer = player_scene.instantiate()
+		newplayer.playerID = ID
+		add_child(newplayer)
+		newplayer_join.emit(ID)

@@ -24,14 +24,12 @@ environment = SubResource("Environment_ihbon")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, -0.25, 6.5, 14)
 
-[node name="Player" parent="." instance=ExtResource("2_yx7mw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
-
 [node name="Game_manager" parent="." node_paths=PackedStringArray("player_mangement", "HUD") instance=ExtResource("3_dugkq")]
 player_mangement = NodePath("../Player_manager")
 HUD = NodePath("../HUD")
 
 [node name="Player_manager" parent="." instance=ExtResource("4_2pltu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0131774, 0)
 player_scene = ExtResource("2_yx7mw")
 
 [node name="HUD" parent="." instance=ExtResource("5_f52ns")]
