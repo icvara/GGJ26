@@ -2,6 +2,8 @@ extends Node3D
 
 @export var player_scene : PackedScene
 
+signal newplayer_join(id)
+
 func _physics_process(delta: float) -> void:
 
 	if Input.is_joy_button_pressed(0, 0):
@@ -18,3 +20,4 @@ func invoke_player(ID):
 	var newplayer = player_scene.instantiate()
 	newplayer.playerID = ID
 	add_child(newplayer)
+	newplayer_join.emit(ID)

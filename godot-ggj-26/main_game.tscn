@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqmbeay2a7elk"]
+[gd_scene load_steps=8 format=3 uid="uid://dqmbeay2a7elk"]
 
 [ext_resource type="PackedScene" uid="uid://bskh5b5s54qa3" path="res://Maps/world_map_v_1.tscn" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="2_yx7mw"]
+[ext_resource type="PackedScene" uid="uid://ckkdp706fm4el" path="res://game_manager.tscn" id="3_dugkq"]
+[ext_resource type="PackedScene" uid="uid://c1ieubwd83hes" path="res://Player/player_manager.tscn" id="4_2pltu"]
+[ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_f52ns"]
 
 [sub_resource type="Sky" id="Sky_ykeeq"]
 
@@ -23,3 +26,12 @@ transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.90630
 
 [node name="Player" parent="." instance=ExtResource("2_yx7mw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+
+[node name="Game_manager" parent="." node_paths=PackedStringArray("player_mangement", "HUD") instance=ExtResource("3_dugkq")]
+player_mangement = NodePath("../Player_manager")
+HUD = NodePath("../HUD")
+
+[node name="Player_manager" parent="." instance=ExtResource("4_2pltu")]
+player_scene = ExtResource("2_yx7mw")
+
+[node name="HUD" parent="." instance=ExtResource("5_f52ns")]
