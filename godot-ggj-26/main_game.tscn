@@ -1,13 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqmbeay2a7elk"]
+[gd_scene load_steps=5 format=3 uid="uid://dqmbeay2a7elk"]
+
+[ext_resource type="PackedScene" uid="uid://bskh5b5s54qa3" path="res://Maps/world_map_v_1.tscn" id="1_1oj5k"]
+[ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="2_yx7mw"]
+
+[sub_resource type="Sky" id="Sky_ykeeq"]
 
 [sub_resource type="Environment" id="Environment_ihbon"]
-ambient_light_source = 2
+sky = SubResource("Sky_ykeeq")
 ambient_light_color = Color(2.4065375e-07, 0, 0.60809505, 1)
-ambient_light_energy = 0.3
-reflected_light_source = 2
+ambient_light_energy = 5.0
 volumetric_fog_enabled = true
 
 [node name="Main_Game" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ihbon")
+
+[node name="World_map_v1" parent="." instance=ExtResource("1_1oj5k")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, -0.25, 6.5, 14)
+
+[node name="Player" parent="." instance=ExtResource("2_yx7mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
