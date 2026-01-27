@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://dqmbeay2a7elk"]
+[gd_scene load_steps=2 format=3 uid="uid://dqmbeay2a7elk"]
+
+[sub_resource type="Environment" id="Environment_ihbon"]
+ambient_light_source = 2
+ambient_light_color = Color(2.4065375e-07, 0, 0.60809505, 1)
+ambient_light_energy = 0.3
+reflected_light_source = 2
+volumetric_fog_enabled = true
 
 [node name="Main_Game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ihbon")

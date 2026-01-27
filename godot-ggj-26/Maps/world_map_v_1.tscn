@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bskh5b5s54qa3"]
+
+[ext_resource type="Texture2D" uid="uid://c10ltqd5oqllr" path="res://Textures/Test_texture01.png" id="1_t4e86"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nksan"]
+albedo_texture = ExtResource("1_t4e86")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_c61m7"]
+material = SubResource("StandardMaterial3D_nksan")
+size = Vector3(20, 0.5, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67lws"]
+albedo_texture = ExtResource("1_t4e86")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_yti1e"]
+material = SubResource("StandardMaterial3D_67lws")
+size = Vector3(0.5, 1.5, 20)
+
+[node name="World_map_v1" type="Node3D"]
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_c61m7")
+skeleton = NodePath("../..")
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.75, 1, 0)
+mesh = SubResource("BoxMesh_yti1e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75, 1, 0)
+mesh = SubResource("BoxMesh_yti1e")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1, -9.75)
+mesh = SubResource("BoxMesh_yti1e")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1, 9.75)
+mesh = SubResource("BoxMesh_yti1e")
