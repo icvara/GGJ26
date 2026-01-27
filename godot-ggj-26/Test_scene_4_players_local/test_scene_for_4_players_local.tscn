@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsvt7bg1nluls"]
+
+[ext_resource type="Script" uid="uid://rabmjmhel607" path="res://Test_scene_4_players_local/test_scene_for_4_players_local.gd" id="1_xlavh"]
+
+[node name="Test_scene_for_4_players_local" type="Node2D"]
+script = ExtResource("1_xlavh")
+player_scene = null
