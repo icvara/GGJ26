@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://6cyhwm5acmh5"]
+[gd_scene load_steps=6 format=3 uid="uid://6cyhwm5acmh5"]
 
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="1_q4wde"]
+[ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="2_4ow0i"]
+[ext_resource type="PackedScene" uid="uid://c1ieubwd83hes" path="res://Player/player_manager.tscn" id="2_ymuet"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2sftl"]
 size = Vector2(100, 100)
@@ -18,11 +20,13 @@ mesh = SubResource("PlaneMesh_2sftl")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_q4wde")
 
-[node name="Player" parent="." instance=ExtResource("1_q4wde")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2886333, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5322263, 0.84660214, 0, -0.84660214, 0.5322263, 0, 37.80361, 37.767136)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0)
+
+[node name="HUD" parent="." instance=ExtResource("2_4ow0i")]
+
+[node name="Player_manager" parent="." instance=ExtResource("2_ymuet")]
+player_scene = ExtResource("1_q4wde")

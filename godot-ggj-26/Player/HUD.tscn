@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://btoc3r2cul1s5"]
+
+[ext_resource type="PackedScene" uid="uid://cwvogerwgo7kl" path="res://Player/player_hud.tscn" id="1_a1gsu"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 150
+
+[node name="Player_HUD" parent="HBoxContainer" instance=ExtResource("1_a1gsu")]
+layout_mode = 2
+
+[node name="Player_HUD2" parent="HBoxContainer" instance=ExtResource("1_a1gsu")]
+layout_mode = 2
+
+[node name="Player_HUD3" parent="HBoxContainer" instance=ExtResource("1_a1gsu")]
+layout_mode = 2
+
+[node name="Player_HUD4" parent="HBoxContainer" instance=ExtResource("1_a1gsu")]
+layout_mode = 2
