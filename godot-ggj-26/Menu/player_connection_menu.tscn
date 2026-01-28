@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcw146c1bp50u"]
+[gd_scene format=3 uid="uid://dcw146c1bp50u"]
 
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="1_xqasa"]
 
-[node name="Player_connection_menu" type="Node3D"]
+[node name="Player_connection_menu" type="Node3D" unique_id=1278084097]
 
-[node name="HUD" parent="." instance=ExtResource("1_xqasa")]
+[node name="HUD" parent="." unique_id=32037717 instance=ExtResource("1_xqasa")]
