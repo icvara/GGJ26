@@ -8,7 +8,7 @@ var player_status = [0,0,0,0]
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("join_game"):
-		invoke_player(0)
+		invoke_player(3)
 
 
 	if Input.is_joy_button_pressed(0, 0):
