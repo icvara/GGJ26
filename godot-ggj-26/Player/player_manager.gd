@@ -26,5 +26,10 @@ func invoke_player(ID):
 		player_status[ID] = 1
 		var newplayer = player_scene.instantiate()
 		newplayer.playerID = ID
+		newplayer.player_has_died.connect(_on_player_death)
 		add_child(newplayer)
 		newplayer_join.emit(ID)
+
+
+func _on_player_death(id):
+	player_status[id] = 0

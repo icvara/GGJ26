@@ -7,7 +7,33 @@ var mask_timer_finished = true
 
 var head_pos = Vector3(0.,1.,0.)
 
+
+var current_HP = 100
+var max_HP = 100
+var timer = 0
+
+signal player_has_died(id)
+
 @export var speed := 10.0
+
+
+func _ready() -> void:
+	current_HP = max_HP
+	$DebugLabel.text = str(current_HP)
+	
+func _process(delta: float) -> void:
+	timer += delta
+	if timer > 0.5:
+		timer = 0
+		if mask_equipped == null:
+			current_HP -= 1
+			$DebugLabel.text = str(current_HP)
+		else:
+			current_HP = clamp(current_HP + 1, 0, max_HP)
+			$DebugLabel.text = str(current_HP)
+
+		if current_HP <= 0 :
+			Die()
 
 func _physics_process(delta):
 	var direction = Vector3()
@@ -40,7 +66,10 @@ func _physics_process(delta):
 	if mask_equipped:
 		mask_equipped.global_position = global_position + head_pos
 
-
+func Die():
+	player_has_died.emit(playerID)
+	queue_free()
+	
 func put_on_mask(mask):
 	mask_equipped = mask
 	mask.global_position = global_position + head_pos
