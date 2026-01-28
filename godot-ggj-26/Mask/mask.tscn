@@ -3,13 +3,11 @@
 [ext_resource type="Script" uid="uid://cbgqwhcmmkfrl" path="res://Mask/mask.gd" id="1_f250e"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bp1os"]
-size = Vector3(1, 1.5, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cq5j3"]
-size = Vector3(1, 1.5, 0.3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1y6m"]
-size = Vector3(1.5, 2, 0.8)
+size = Vector3(1.5, 1.5, 1.5)
 
 [node name="Mask" type="CharacterBody3D"]
 collision_layer = 0

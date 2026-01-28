@@ -5,7 +5,7 @@ var playerID = 0
 var mask_equipped = null
 var mask_timer_finished = true
 
-var head_pos = Vector3(0.,1.,0.5)
+var head_pos = Vector3(0.,1.,0.)
 
 @export var speed := 10.0
 
