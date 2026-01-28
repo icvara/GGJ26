@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqmbeay2a7elk"]
+[gd_scene load_steps=10 format=3 uid="uid://dqmbeay2a7elk"]
 
 [ext_resource type="PackedScene" uid="uid://bskh5b5s54qa3" path="res://Maps/world_map_v_1.tscn" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="2_yx7mw"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ieubwd83hes" path="res://Player/player_manager.tscn" id="4_2pltu"]
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_f52ns"]
 [ext_resource type="PackedScene" uid="uid://632f50g7ngck" path="res://Mask/mask.tscn" id="6_2pltu"]
+[ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="7_f52ns"]
 
 [sub_resource type="Sky" id="Sky_ykeeq"]
 
@@ -40,3 +41,8 @@ transform = Transform3D(0.7951772, 0.49415216, 0.3514353, -0.60637707, 0.6480102
 
 [node name="Mask" parent="." instance=ExtResource("6_2pltu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.261156, 1.2557755, 0)
+
+[node name="Atmosphere" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_f52ns")
+volume_db = -5.0
+autoplay = true
