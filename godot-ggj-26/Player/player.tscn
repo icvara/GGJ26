@@ -34,4 +34,10 @@ billboard = 1
 text = "100"
 font_size = 128
 
+[node name="Label3D_playername" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+billboard = 1
+text = "Yes"
+font_size = 108
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

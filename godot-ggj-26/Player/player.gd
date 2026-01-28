@@ -20,6 +20,7 @@ signal player_has_died(id)
 func _ready() -> void:
 	current_HP = max_HP
 	$DebugLabel.text = str(current_HP)
+	$Label3D_playername.text = "Player" + str(playerID)
 	
 func _process(delta: float) -> void:
 	timer += delta
