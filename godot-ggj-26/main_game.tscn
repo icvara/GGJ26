@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://632f50g7ngck" path="res://Mask/mask.tscn" id="6_2pltu"]
 [ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="7_f52ns"]
 [ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://Base/base.tscn" id="8_l5ukw"]
-[ext_resource type="PackedScene" path="res://Maps/world_map_v_2.tscn" id="9_mf81u"]
+[ext_resource type="PackedScene" uid="uid://br08ylk0w5l60" path="res://Maps/world_map_v_2.tscn" id="9_mf81u"]
 [ext_resource type="PackedScene" uid="uid://bhc18o0uutig0" path="res://items/rn_gobject_on_map.tscn" id="10_02kkc"]
 
 [sub_resource type="Sky" id="Sky_ykeeq"]
@@ -56,4 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41083288, 2.132377, 4.85357
 [node name="World_map_v2" parent="." unique_id=1930803997 instance=ExtResource("9_mf81u")]
 
 [node name="RNGobjectOnMap" parent="." unique_id=1498846755 instance=ExtResource("10_02kkc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9532006, 6.8292613, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 2.5)
+grid_size = Vector3i(10, 1, 7)
+cell_size = 1.0
