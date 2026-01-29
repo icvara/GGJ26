@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var items: Array[PackedScene]
-@export var grid_size := Vector3i(20, 1, 20) # grid width, height, depth
+@export var grid_size := Vector3i(10, 1, 10) # grid width, height, depth
 @export var cell_size := 2.0                 # size of each grid cell
 
 func _on_timer_timeout():
@@ -13,9 +13,9 @@ func _on_timer_timeout():
 	var item: Node3D = item_scene.instantiate()
 
 	# Pick random grid coordinates
-	var grid_x := randi_range(0, grid_size.x - 1)
-	var grid_y := randi_range(0, grid_size.y - 1)
-	var grid_z := randi_range(0, grid_size.z - 1)
+	var grid_x := randi_range(-grid_size.x, grid_size.x - 1)
+	var grid_y := randi_range(-grid_size.y , grid_size.y - 1)
+	var grid_z := randi_range(-grid_size.z, grid_size.z - 1)
 
 	# Convert grid position to world position
 	var world_pos := Vector3(

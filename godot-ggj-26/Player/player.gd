@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var gravity: float = 20.0
+@export var gravity: float = 100.0
 var playerID = 0
 
 var mask_equipped = null
@@ -15,7 +15,7 @@ var timer = 0
 
 signal player_has_died(id)
 
-@export var speed := 10.0
+@export var speed := 5.0
 
 
 func _ready() -> void:
