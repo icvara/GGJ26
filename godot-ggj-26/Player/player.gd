@@ -54,7 +54,7 @@ func _physics_process(delta):
 		direction.z = 0
 
 	if playerID == 3:
-		direction = Vector3()
+		#direction = Vector3()
 
 		if Input.is_action_pressed("move_down"):
 			direction.z = 1
