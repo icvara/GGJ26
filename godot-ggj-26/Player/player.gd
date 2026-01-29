@@ -54,6 +54,8 @@ func _physics_process(delta):
 		direction.z = 0
 
 	if playerID == 3:
+		direction = Vector3()
+
 		if Input.is_action_pressed("move_down"):
 			direction.z = 1
 		if Input.is_action_pressed("move_up"):
@@ -64,7 +66,8 @@ func _physics_process(delta):
 			direction.x = 1	
 	#if input_vector.length() > 0:
 		#input_vector = input_vector.normalized()
-
+	print(playerID)
+	print(direction)
 	#var direction = Vector2(input_vector.x, input_vector.y)
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
