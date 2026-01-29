@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 		velocity.y -= gravity * delta
 
 	move_and_slide()
-	timer += delta
+	'timer += delta
 	if timer > 0.2:
 		timer = 0
 		if mask_equipped == null:
@@ -37,9 +37,10 @@ func _process(delta: float) -> void:
 			$DebugLabel.text = str(current_HP)
 		else:
 			current_HP = clamp(current_HP + 1, 0, max_HP)
-			$DebugLabel.text = str(current_HP)
+			$DebugLabel.text = str(current_HP)'
 
-		if current_HP <= 0 :
+		
+	if current_HP <= 0 :
 			Die()
 
 func _physics_process(delta):
@@ -79,6 +80,8 @@ func Die():
 
 func collect_item():
 	item_collected += 1
+	$DebugLabel.text = str(item_collected)
+
 
 func put_on_mask(mask):
 	mask_equipped = mask

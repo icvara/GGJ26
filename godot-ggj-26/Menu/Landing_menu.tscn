@@ -1,19 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bew08i2kgmfrd"]
+[gd_scene format=3 uid="uid://bew08i2kgmfrd"]
 
 [ext_resource type="Script" uid="uid://7fwy5n4lo1ki" path="res://Menu/landing_menu.gd" id="1_ehssh"]
 [ext_resource type="AudioStream" uid="uid://blwc1w4o6855h" path="res://Music/Loop_01.wav" id="2_ifrtk"]
 
-[node name="LandingMenu" type="Node2D"]
+[node name="LandingMenu" type="Node2D" unique_id=596205154]
 script = ExtResource("1_ehssh")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1530340453]
 offset_left = 44.0
 offset_top = 25.0
 offset_right = 1102.0
 offset_bottom = 591.0
 color = Color(0.17898095, 0.25193712, 0.42623737, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=861020078]
 offset_left = 85.0
 offset_top = 92.0
 offset_right = 1062.0
@@ -21,7 +21,7 @@ offset_bottom = 151.0
 theme_override_font_sizes/font_size = 40
 text = "Amazing Game with mask on Post-Apocalyptic thing"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="." unique_id=527370003]
 offset_left = 101.0
 offset_top = 174.0
 offset_right = 1025.0
@@ -30,38 +30,62 @@ theme_override_font_sizes/font_size = 24
 text = "This is the Prototype. Nothing is fix, everything can change. don't let your mind be trapped"
 autowrap_mode = 2
 
-[node name="button_menu" type="VBoxContainer" parent="."]
+[node name="Label3" type="Label" parent="." unique_id=1234124485]
+offset_left = 83.0
+offset_top = 317.0
+offset_right = 498.0
+offset_bottom = 462.0
+theme_override_font_sizes/font_size = 24
+text = "The Online is only here for playtesting. Currently can only host on my computer and one game at a time"
+autowrap_mode = 2
+
+[node name="button_menu" type="VBoxContainer" parent="." unique_id=1199064924]
 offset_left = 523.0
 offset_top = 310.0
 offset_right = 624.0
 offset_bottom = 490.0
 
-[node name="Button_play" type="Button" parent="button_menu"]
+[node name="Button_play" type="Button" parent="button_menu" unique_id=11313878]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Play"
+text = "Play Local"
 
-[node name="Button_settings" type="Button" parent="button_menu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="button_menu" unique_id=831827337]
+layout_mode = 2
+
+[node name="Button_playclient" type="Button" parent="button_menu/HBoxContainer" unique_id=1755663735]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Client"
+
+[node name="Button_host" type="Button" parent="button_menu/HBoxContainer" unique_id=789749291]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Host "
+
+[node name="Button_settings" type="Button" parent="button_menu" unique_id=61408850]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Settings"
 
-[node name="Button_Credit" type="Button" parent="button_menu"]
+[node name="Button_Credit" type="Button" parent="button_menu" unique_id=1078870074]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Credit"
 
-[node name="Button_Quit" type="Button" parent="button_menu"]
+[node name="Button_Quit" type="Button" parent="button_menu" unique_id=487847278]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Quit"
 
-[node name="Loop01" type="AudioStreamPlayer" parent="."]
+[node name="Loop01" type="AudioStreamPlayer" parent="." unique_id=1775825807]
 stream = ExtResource("2_ifrtk")
 volume_db = -5.0
 autoplay = true
 
 [connection signal="pressed" from="button_menu/Button_play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="button_menu/HBoxContainer/Button_playclient" to="." method="_on_button_playclient_pressed"]
+[connection signal="pressed" from="button_menu/HBoxContainer/Button_host" to="." method="_on_button_host_pressed"]
 [connection signal="pressed" from="button_menu/Button_settings" to="." method="_on_button_settings_pressed"]
 [connection signal="pressed" from="button_menu/Button_Credit" to="." method="_on_button_credit_pressed"]
 [connection signal="pressed" from="button_menu/Button_Quit" to="." method="_on_button_quit_pressed"]
