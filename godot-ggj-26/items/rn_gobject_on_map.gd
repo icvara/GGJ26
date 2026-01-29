@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var items: Array[PackedScene]
-@export var grid_size := Vector3i(10, 1, 10) # grid width, height, depth
+@export var grid_size := Vector3i(5, 1, 5) # grid width, height, depth
 @export var cell_size := 2.0                 # size of each grid cell
 
 func _on_timer_timeout():
