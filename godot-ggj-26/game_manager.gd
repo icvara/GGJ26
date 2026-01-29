@@ -4,7 +4,6 @@ extends Node3D
 @export var HUD : CanvasLayer
 @export var BaseCamp: Node3D
 
-
 func _ready() -> void:
 	
 	player_mangement.newplayer_join.connect(HUD._on_player_update)

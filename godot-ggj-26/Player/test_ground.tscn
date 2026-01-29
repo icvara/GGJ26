@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://6cyhwm5acmh5"]
+[gd_scene format=3 uid="uid://6cyhwm5acmh5"]
 
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="1_q4wde"]
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="2_4ow0i"]
 [ext_resource type="PackedScene" uid="uid://c1ieubwd83hes" path="res://Player/player_manager.tscn" id="2_ymuet"]
 [ext_resource type="PackedScene" uid="uid://ckkdp706fm4el" path="res://game_manager.tscn" id="4_cdq01"]
+[ext_resource type="PackedScene" uid="uid://bhc18o0uutig0" path="res://items/rn_gobject_on_map.tscn" id="5_dyjbg"]
+[ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://Base/base.tscn" id="6_po2bm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2sftl"]
 size = Vector2(100, 100)
@@ -11,27 +13,34 @@ size = Vector2(100, 100)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q4wde"]
 data = PackedVector3Array(50, 0, 50, -50, 0, 50, 50, 0, -50, -50, 0, 50, -50, 0, -50, 50, 0, -50)
 
-[node name="test_ground" type="Node3D"]
+[node name="test_ground" type="Node3D" unique_id=1269311306]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1879813899]
 mesh = SubResource("PlaneMesh_2sftl")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=714134507]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=371587978]
 shape = SubResource("ConcavePolygonShape3D_q4wde")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5322263, 0.84660214, 0, -0.84660214, 0.5322263, 0, 37.80361, 37.767136)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1221656388]
+transform = Transform3D(1, 0, 0, 0, 0.5322263, 0.84660214, 0, -0.84660214, 0.5322263, 16.865889, 15.215717, 27.584503)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2001801270]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0)
 
-[node name="HUD" parent="." instance=ExtResource("2_4ow0i")]
+[node name="HUD" parent="." unique_id=1729314102 instance=ExtResource("2_4ow0i")]
 
-[node name="Player_manager" parent="." instance=ExtResource("2_ymuet")]
+[node name="Player_manager" parent="." unique_id=98894305 instance=ExtResource("2_ymuet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4228568, 0)
 player_scene = ExtResource("1_q4wde")
 
-[node name="Game_manager" parent="." node_paths=PackedStringArray("player_mangement", "HUD") instance=ExtResource("4_cdq01")]
+[node name="Game_manager" parent="." unique_id=2143467185 node_paths=PackedStringArray("player_mangement", "HUD", "BaseCamp") instance=ExtResource("4_cdq01")]
 player_mangement = NodePath("../Player_manager")
 HUD = NodePath("../HUD")
+BaseCamp = NodePath("../Base")
+
+[node name="RNGobjectOnMap" parent="." unique_id=1498846755 instance=ExtResource("5_dyjbg")]
+
+[node name="Base" parent="." unique_id=513359015 instance=ExtResource("6_po2bm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.99164, 0.020117283, 0)

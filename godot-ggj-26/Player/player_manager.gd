@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var player_scene : PackedScene
+@export var infection : PackedScene
 
 signal newplayer_join(id)
 
@@ -20,14 +21,22 @@ func _physics_process(delta: float) -> void:
 	if Input.is_joy_button_pressed(3, 0):
 		invoke_player(3)
 		
+
+func infect_player_manager(p):
+	var newinfection = infection.instantiate()
+	if newinfection.infect_player(p):
+		p.add_child(newinfection)
+
 		
 func invoke_player(ID):
+	print(ID)
 	if player_status[ID] == 0:
 		player_status[ID] = 1
 		var newplayer = player_scene.instantiate()
 		newplayer.playerID = ID
 		newplayer.player_has_died.connect(_on_player_death)
 		add_child(newplayer)
+		infect_player_manager(newplayer)
 		newplayer_join.emit(ID)
 
 

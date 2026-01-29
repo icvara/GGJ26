@@ -2,7 +2,7 @@ extends StaticBody3D
 
 
 var item_stored = 0
-var max_item = 10
+var max_item = 100
 
 signal max_storage_reach
 # Called when the node enters the scene tree for the first time.

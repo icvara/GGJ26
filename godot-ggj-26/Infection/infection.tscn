@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://65rtgrnax6qc"]
+
+[ext_resource type="Script" uid="uid://bfidmnktxdofk" path="res://Infection/infection.gd" id="1_e0k3c"]
+
+[node name="Infection" type="Node3D" unique_id=978316446]
+script = ExtResource("1_e0k3c")
