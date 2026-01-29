@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://db776obwvfsan"]
+[gd_scene load_steps=7 format=3 uid="uid://db776obwvfsan"]
 
 [ext_resource type="Script" uid="uid://cxoe6etd5qk7q" path="res://Player/player.gd" id="1_l8h54"]
 
@@ -25,34 +25,34 @@ properties/2/path = NodePath("DebugLabel:text")
 properties/2/spawn = true
 properties/2/replication_mode = 1
 
-[node name="Player" type="CharacterBody3D" unique_id=1871022311 groups=["players"]]
+[node name="Player" type="CharacterBody3D" groups=["players"]]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 script = ExtResource("1_l8h54")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=311908127]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hvfyp")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1213607093]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_4ntmi")
 
-[node name="Area3D" type="Area3D" parent="." unique_id=875878613]
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=671589024]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_l8h54")
 
-[node name="DebugLabel" type="Label3D" parent="." unique_id=236099951]
+[node name="DebugLabel" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0605302, 0)
 billboard = 1
 text = "100"
 font_size = 128
 
-[node name="Label3D_playername" type="Label3D" parent="." unique_id=1661365323]
+[node name="Label3D_playername" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 billboard = 1
 text = "Yes"
 font_size = 108
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=315882999]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_l8h54")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

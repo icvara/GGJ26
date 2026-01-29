@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 func infect_player_manager(p):
 	var newinfection = infection.instantiate()
 	if newinfection.infect_player(p):
+		newinfection.name = "infection"
 		p.add_child(newinfection)
 
 @rpc("any_peer","call_local")	
