@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqmbeay2a7elk"]
+[gd_scene format=3 uid="uid://dqmbeay2a7elk"]
 
 [ext_resource type="PackedScene" uid="uid://bskh5b5s54qa3" path="res://Maps/world_map_v_1.tscn" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="2_yx7mw"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_f52ns"]
 [ext_resource type="PackedScene" uid="uid://632f50g7ngck" path="res://Mask/mask.tscn" id="6_2pltu"]
 [ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="7_f52ns"]
+[ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://Base/base.tscn" id="8_l5ukw"]
 
 [sub_resource type="Sky" id="Sky_ykeeq"]
 
@@ -16,33 +17,37 @@ ambient_light_color = Color(2.4065375e-07, 0, 0.60809505, 1)
 ambient_light_energy = 5.0
 volumetric_fog_enabled = true
 
-[node name="Main_Game" type="Node3D"]
+[node name="Main_Game" type="Node3D" unique_id=451191525]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=326488340]
 environment = SubResource("Environment_ihbon")
 
-[node name="World_map_v1" parent="." instance=ExtResource("1_1oj5k")]
+[node name="World_map_v1" parent="." unique_id=1035010336 instance=ExtResource("1_1oj5k")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=869746159]
 transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, -0.25, 6.5, 14)
 
-[node name="Game_manager" parent="." node_paths=PackedStringArray("player_mangement", "HUD") instance=ExtResource("3_dugkq")]
+[node name="Game_manager" parent="." unique_id=776074262 node_paths=PackedStringArray("player_mangement", "HUD", "BaseCamp") instance=ExtResource("3_dugkq")]
 player_mangement = NodePath("../Player_manager")
 HUD = NodePath("../HUD")
+BaseCamp = NodePath("../Base")
 
-[node name="Player_manager" parent="." instance=ExtResource("4_2pltu")]
+[node name="Player_manager" parent="." unique_id=2086727439 instance=ExtResource("4_2pltu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0131774, 0)
 player_scene = ExtResource("2_yx7mw")
 
-[node name="HUD" parent="." instance=ExtResource("5_f52ns")]
+[node name="HUD" parent="." unique_id=602708479 instance=ExtResource("5_f52ns")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1334538121]
 transform = Transform3D(0.7951772, 0.49415216, 0.3514353, -0.60637707, 0.64801025, 0.4608574, 0, -0.57956564, 0.81492555, 0, 0, 0)
 
-[node name="Mask" parent="." instance=ExtResource("6_2pltu")]
+[node name="Mask" parent="." unique_id=1881364741 instance=ExtResource("6_2pltu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.261156, 1.2557755, 0)
 
-[node name="Atmosphere" type="AudioStreamPlayer" parent="."]
+[node name="Atmosphere" type="AudioStreamPlayer" parent="." unique_id=789244797]
 stream = ExtResource("7_f52ns")
 volume_db = -5.0
 autoplay = true
+
+[node name="Base" parent="." unique_id=513359015 instance=ExtResource("8_l5ukw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2998247, 0.5366993, 2.755956)

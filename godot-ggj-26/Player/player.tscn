@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://db776obwvfsan"]
+[gd_scene format=3 uid="uid://db776obwvfsan"]
 
 [ext_resource type="Script" uid="uid://cxoe6etd5qk7q" path="res://Player/player.gd" id="1_l8h54"]
 
@@ -14,27 +14,27 @@ material = SubResource("StandardMaterial3D_l8h54")
 radius = 0.8
 height = 2.3
 
-[node name="Player" type="CharacterBody3D" groups=["players"]]
+[node name="Player" type="CharacterBody3D" unique_id=1871022311 groups=["players"]]
 script = ExtResource("1_l8h54")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=311908127]
 shape = SubResource("CapsuleShape3D_hvfyp")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1213607093]
 mesh = SubResource("CapsuleMesh_4ntmi")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=875878613]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=671589024]
 shape = SubResource("CapsuleShape3D_l8h54")
 
-[node name="DebugLabel" type="Label3D" parent="."]
+[node name="DebugLabel" type="Label3D" parent="." unique_id=236099951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0605302, 0)
 billboard = 1
 text = "100"
 font_size = 128
 
-[node name="Label3D_playername" type="Label3D" parent="."]
+[node name="Label3D_playername" type="Label3D" parent="." unique_id=1661365323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 billboard = 1
 text = "Yes"

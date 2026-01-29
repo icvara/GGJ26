@@ -11,3 +11,7 @@ func _on_player_update(id):
 		$HBoxContainer/Player_HUD3/Panel/Label.text = "Player" + str(id) 
 	if id == 3:
 		$HBoxContainer/Player_HUD4/Panel/Label.text = "Player" + str(id) 
+		
+		
+func _on_max_storage():
+	$win_window.show()
