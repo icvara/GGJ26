@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dqmbeay2a7elk"]
 
-[ext_resource type="PackedScene" uid="uid://bskh5b5s54qa3" path="res://Maps/world_map_v_1.tscn" id="1_1oj5k"]
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="2_yx7mw"]
 [ext_resource type="PackedScene" uid="uid://ckkdp706fm4el" path="res://game_manager.tscn" id="3_dugkq"]
 [ext_resource type="PackedScene" uid="uid://c1ieubwd83hes" path="res://Player/player_manager.tscn" id="4_2pltu"]
@@ -9,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://632f50g7ngck" path="res://Mask/mask.tscn" id="6_2pltu"]
 [ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="7_f52ns"]
 [ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://Base/base.tscn" id="8_l5ukw"]
+[ext_resource type="PackedScene" path="res://Maps/world_map_v_2.tscn" id="9_mf81u"]
+[ext_resource type="PackedScene" uid="uid://bhc18o0uutig0" path="res://items/rn_gobject_on_map.tscn" id="10_02kkc"]
 
 [sub_resource type="Sky" id="Sky_ykeeq"]
 
@@ -22,8 +23,6 @@ volumetric_fog_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=326488340]
 environment = SubResource("Environment_ihbon")
-
-[node name="World_map_v1" parent="." unique_id=1035010336 instance=ExtResource("1_1oj5k")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=869746159]
 transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, -0.25, 6.5, 14)
@@ -52,4 +51,9 @@ volume_db = -5.0
 autoplay = true
 
 [node name="Base" parent="." unique_id=513359015 instance=ExtResource("8_l5ukw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2998247, 0.5366993, 2.755956)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41083288, 2.132377, 4.853577)
+
+[node name="World_map_v2" parent="." unique_id=1930803997 instance=ExtResource("9_mf81u")]
+
+[node name="RNGobjectOnMap" parent="." unique_id=1498846755 instance=ExtResource("10_02kkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9532006, 2.2892332, 0)
