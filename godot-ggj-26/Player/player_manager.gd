@@ -8,19 +8,29 @@ signal newplayer_join(id)
 var player_status = [0,0,0,0]
 
 func _physics_process(delta: float) -> void:
+	#if GlobalParameter.ishosting:
 	if Input.is_action_pressed("join_game"):
+		print("pressed")
+		#invoke_player.rpc_id(1,3)
 		invoke_player(3)
 
 
 	if Input.is_joy_button_pressed(0, 0):
-		invoke_player.rpc_id(1,0)
+		#invoke_player.rpc_id(1,0)
+		invoke_player(0)
 
 	if Input.is_joy_button_pressed(1, 0):
-		invoke_player.rpc_id(1,1)
+		#invoke_player.rpc_id(1,1)
+		invoke_player(1)
+
 	if Input.is_joy_button_pressed(2, 0):
-		invoke_player.rpc_id(1,2)
+		#invoke_player.rpc_id(1,2)
+		invoke_player(2)
+
 	if Input.is_joy_button_pressed(3, 0):
-		invoke_player.rpc_id(1,3)
+		#invoke_player.rpc_id(1,3)
+		invoke_player(3)
+
 		
 
 func infect_player_manager(p):
