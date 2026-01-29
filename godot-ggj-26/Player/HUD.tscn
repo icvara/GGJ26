@@ -1,24 +1,72 @@
-[gd_scene load_steps=3 format=3 uid="uid://btoc3r2cul1s5"]
+[gd_scene format=3 uid="uid://btoc3r2cul1s5"]
 
 [ext_resource type="PackedScene" uid="uid://cwvogerwgo7kl" path="res://Player/player_hud.tscn" id="1_a1gsu"]
 [ext_resource type="Script" uid="uid://du6gf4csqr6db" path="res://Player/hud.gd" id="1_jrba6"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=2128050032]
 script = ExtResource("1_jrba6")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1460553457]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 150
 
-[node name="Player_HUD" parent="HBoxContainer" instance=ExtResource("1_a1gsu")]
+[node name="Player_HUD" parent="HBoxContainer" unique_id=1009366728 instance=ExtResource("1_a1gsu")]
 layout_mode = 2
 
-[node name="Player_HUD2" parent="HBoxContainer" instance=ExtResource("1_a1gsu")]
+[node name="Player_HUD2" parent="HBoxContainer" unique_id=788404761 instance=ExtResource("1_a1gsu")]
 layout_mode = 2
 
-[node name="Player_HUD3" parent="HBoxContainer" instance=ExtResource("1_a1gsu")]
+[node name="Player_HUD3" parent="HBoxContainer" unique_id=2145007044 instance=ExtResource("1_a1gsu")]
 layout_mode = 2
 
-[node name="Player_HUD4" parent="HBoxContainer" instance=ExtResource("1_a1gsu")]
+[node name="Player_HUD4" parent="HBoxContainer" unique_id=492906238 instance=ExtResource("1_a1gsu")]
 layout_mode = 2
+
+[node name="win_window" type="ColorRect" parent="." unique_id=2019775241]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -157.0
+offset_right = 370.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8055693, 0.5842328, 0.5918895, 1)
+
+[node name="Label" type="Label" parent="win_window" unique_id=1335327869]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 114.0
+offset_right = 465.0
+offset_bottom = 183.0
+theme_override_font_sizes/font_size = 50
+text = "You Win"
+
+[node name="gameover_window" type="ColorRect" parent="." unique_id=968116811]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -370.0
+offset_top = -157.0
+offset_right = 370.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5720015, 0.64254653, 0.8534216, 1)
+
+[node name="Label" type="Label" parent="gameover_window" unique_id=444157424]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 114.0
+offset_right = 465.0
+offset_bottom = 183.0
+theme_override_font_sizes/font_size = 50
+text = "GameOver"

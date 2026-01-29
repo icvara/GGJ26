@@ -6,7 +6,7 @@ var mask_equipped = null
 var mask_timer_finished = true
 
 var head_pos = Vector3(0.,1.,0.)
-
+var item_collected = 0
 
 var current_HP = 100
 var max_HP = 100
@@ -21,10 +21,11 @@ func _ready() -> void:
 	current_HP = max_HP
 	$DebugLabel.text = str(current_HP)
 	$Label3D_playername.text = "Player" + str(playerID)
+	item_collected = randi_range(1,10)
 	
 func _process(delta: float) -> void:
 	timer += delta
-	if timer > 0.5:
+	if timer > 0.2:
 		timer = 0
 		if mask_equipped == null:
 			current_HP -= 1
@@ -70,7 +71,10 @@ func _physics_process(delta):
 func Die():
 	player_has_died.emit(playerID)
 	queue_free()
-	
+
+func collect_item():
+	item_collected += 1
+
 func put_on_mask(mask):
 	mask_equipped = mask
 	mask.global_position = global_position + head_pos
