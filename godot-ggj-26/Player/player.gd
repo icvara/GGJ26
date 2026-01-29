@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var gravity: float = 20.0
 var playerID = 0
 
 var mask_equipped = null
@@ -24,6 +25,10 @@ func _ready() -> void:
 	#item_collected = randi_range(1,10)
 	
 func _process(delta: float) -> void:
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+
+	move_and_slide()
 	timer += delta
 	if timer > 0.2:
 		timer = 0
