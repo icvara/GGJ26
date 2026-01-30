@@ -24,7 +24,7 @@ HUD = NodePath("../HUD")
 BaseCamp = NodePath("../Base")
 
 [node name="Player_manager" parent="." unique_id=1889040666 instance=ExtResource("4_2pltu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7631774, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6310005, 3.7631774, 8.56362)
 player_scene = ExtResource("2_yx7mw")
 infection = ExtResource("5_4srsv")
 
@@ -45,8 +45,8 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.682478, 0.2909844, 8.443359)
 
 [node name="RNGobjectOnMap" parent="." unique_id=471875983 instance=ExtResource("10_02kkc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 2.5)
-grid_size = Vector3i(10, 1, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -5)
+grid_size = Vector3i(20, 1, 20)
 cell_size = 1.0
 
 [node name="Test_map" parent="." unique_id=595271426 instance=ExtResource("10_mf81u")]
@@ -55,10 +55,7 @@ cell_size = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.300762, 0, 3.28129)
 
 [node name="infection_fog" parent="." unique_id=1722321046 instance=ExtResource("12_aomqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.528002, 0, 0)
 
 [node name="infection_fog2" parent="." unique_id=812520803 instance=ExtResource("12_aomqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12125397, 0, -11.052289)
-
-[node name="infection_fog3" parent="." unique_id=1471282889 instance=ExtResource("12_aomqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.04123, 0, -24.053265)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.493576, 0, -25.783878)
