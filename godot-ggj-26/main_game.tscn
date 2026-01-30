@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqmbeay2a7elk"]
+[gd_scene format=3 uid="uid://dqmbeay2a7elk"]
 
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="2_yx7mw"]
 [ext_resource type="PackedScene" uid="uid://ckkdp706fm4el" path="res://game_manager.tscn" id="3_dugkq"]
@@ -7,55 +7,58 @@
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_f52ns"]
 [ext_resource type="PackedScene" uid="uid://632f50g7ngck" path="res://Mask/mask.tscn" id="6_2pltu"]
 [ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="7_f52ns"]
-[ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://Base/base.tscn" id="8_l5ukw"]
-[ext_resource type="PackedScene" path="res://Maps/world_map_v_2.tscn" id="9_mf81u"]
+[ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://station/Base/base.tscn" id="8_l5ukw"]
 [ext_resource type="PackedScene" uid="uid://bhc18o0uutig0" path="res://items/rn_gobject_on_map.tscn" id="10_02kkc"]
+[ext_resource type="PackedScene" uid="uid://c3tbtpdw4sfmm" path="res://Maps/test_map.tscn" id="10_mf81u"]
+[ext_resource type="PackedScene" uid="uid://q5m2skpb4ndc" path="res://station/check_station/check_station.tscn" id="11_02kkc"]
+[ext_resource type="PackedScene" uid="uid://c7rbpekupu8hi" path="res://station/infection_fog.tscn" id="12_aomqu"]
 
-[sub_resource type="Sky" id="Sky_ykeeq"]
+[node name="Main_Game" type="Node3D" unique_id=1175042931]
 
-[sub_resource type="Environment" id="Environment_ihbon"]
-sky = SubResource("Sky_ykeeq")
-ambient_light_color = Color(2.4065375e-07, 0, 0.60809505, 1)
-ambient_light_energy = 5.0
-volumetric_fog_enabled = true
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1410440018]
+transform = Transform3D(1, 0, 0, 0, 0.59698135, 0.8022552, 0, -0.8022552, 0.59698135, 0, 10.792818, 10.007245)
 
-[node name="Main_Game" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ihbon")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.28705966, 0.95791274, 0, -0.95791274, 0.28705966, 0, 17.482796, 7.250724)
-
-[node name="Game_manager" parent="." node_paths=PackedStringArray("player_mangement", "HUD", "BaseCamp") instance=ExtResource("3_dugkq")]
+[node name="Game_manager" parent="." unique_id=1721808062 node_paths=PackedStringArray("player_mangement", "HUD", "BaseCamp") instance=ExtResource("3_dugkq")]
 player_mangement = NodePath("../Player_manager")
 HUD = NodePath("../HUD")
 BaseCamp = NodePath("../Base")
 
-[node name="Player_manager" parent="." instance=ExtResource("4_2pltu")]
+[node name="Player_manager" parent="." unique_id=1889040666 instance=ExtResource("4_2pltu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7631774, 0)
 player_scene = ExtResource("2_yx7mw")
 infection = ExtResource("5_4srsv")
 
-[node name="HUD" parent="." instance=ExtResource("5_f52ns")]
+[node name="HUD" parent="." unique_id=1404177497 instance=ExtResource("5_f52ns")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1348228224]
 transform = Transform3D(0.7951772, 0.49415216, 0.3514353, -0.60637707, 0.64801025, 0.4608574, 0, -0.57956564, 0.81492555, 0, 0, 0)
 
-[node name="Mask" parent="." instance=ExtResource("6_2pltu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.261156, 1.2557755, 0)
+[node name="Mask" parent="." unique_id=520940036 instance=ExtResource("6_2pltu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9739122, 1.2557755, 6.6683407)
 
-[node name="Atmosphere" type="AudioStreamPlayer" parent="."]
+[node name="Atmosphere" type="AudioStreamPlayer" parent="." unique_id=1606522218]
 stream = ExtResource("7_f52ns")
 volume_db = -5.0
 autoplay = true
 
-[node name="Base" parent="." instance=ExtResource("8_l5ukw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.41083288, 2.132377, 4.853577)
+[node name="Base" parent="." unique_id=1732238513 instance=ExtResource("8_l5ukw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.682478, 0.2909844, 8.443359)
 
-[node name="World_map_v2" parent="." instance=ExtResource("9_mf81u")]
-
-[node name="RNGobjectOnMap" parent="." instance=ExtResource("10_02kkc")]
+[node name="RNGobjectOnMap" parent="." unique_id=471875983 instance=ExtResource("10_02kkc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 2.5)
 grid_size = Vector3i(10, 1, 7)
 cell_size = 1.0
+
+[node name="Test_map" parent="." unique_id=595271426 instance=ExtResource("10_mf81u")]
+
+[node name="Check_station" parent="." unique_id=1748721446 instance=ExtResource("11_02kkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.300762, 0, 3.28129)
+
+[node name="infection_fog" parent="." unique_id=1722321046 instance=ExtResource("12_aomqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="infection_fog2" parent="." unique_id=812520803 instance=ExtResource("12_aomqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12125397, 0, -11.052289)
+
+[node name="infection_fog3" parent="." unique_id=1471282889 instance=ExtResource("12_aomqu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.04123, 0, -24.053265)

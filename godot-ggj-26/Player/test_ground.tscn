@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ieubwd83hes" path="res://Player/player_manager.tscn" id="2_ymuet"]
 [ext_resource type="PackedScene" uid="uid://ckkdp706fm4el" path="res://game_manager.tscn" id="4_cdq01"]
 [ext_resource type="PackedScene" uid="uid://bhc18o0uutig0" path="res://items/rn_gobject_on_map.tscn" id="5_dyjbg"]
-[ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://Base/base.tscn" id="6_po2bm"]
+[ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://station/Base/base.tscn" id="6_po2bm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2sftl"]
 size = Vector2(100, 100)

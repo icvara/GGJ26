@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://q5m2skpb4ndc"]
+
+[ext_resource type="Script" uid="uid://b6sldahrxgwdw" path="res://station/check_station/check_station.gd" id="1_qavub"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_d4x0b"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3i6m4"]
+radius = 0.8
+
+[node name="Check_station" type="Node3D" unique_id=1748721446]
+script = ExtResource("1_qavub")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1497308383]
+mesh = SubResource("CylinderMesh_d4x0b")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1779890947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9554415, 0)
+billboard = 1
+text = "Check_station"
+font_size = 100
+
+[node name="Label3D_output" type="Label3D" parent="." unique_id=831875135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4391694, 0)
+visible = false
+billboard = 1
+text = "Infected"
+font_size = 100
+
+[node name="Area3D" type="Area3D" parent="." unique_id=315088486]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1809793063]
+shape = SubResource("CylinderShape3D_3i6m4")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

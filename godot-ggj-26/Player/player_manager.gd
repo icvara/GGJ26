@@ -6,6 +6,7 @@ extends Node3D
 signal newplayer_join(id)
 
 var player_status = [0,0,0,0]
+var infection_rate_at_spawn = 0.5
 
 func _physics_process(delta: float) -> void:
 	#if GlobalParameter.ishosting:
@@ -34,8 +35,9 @@ func _physics_process(delta: float) -> void:
 		
 
 func infect_player_manager(p):
-	var newinfection = infection.instantiate()
-	if newinfection.infect_player(p):
+	if randf() < infection_rate_at_spawn:
+		var newinfection = infection.instantiate()
+		newinfection.infect_player(p)
 		newinfection.name = "infection"
 		p.add_child(newinfection)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://br08ylk0w5l60"]
+[gd_scene format=3 uid="uid://br08ylk0w5l60"]
 
 [ext_resource type="Texture2D" uid="uid://c10ltqd5oqllr" path="res://Textures/Test_texture01.png" id="1_apte6"]
 
@@ -134,6 +134,14 @@ size = Vector3(30, 10, 1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_105xe"]
 data = PackedVector3Array(-15, 5, 0.5, 15, 5, 0.5, -15, -5, 0.5, 15, 5, 0.5, 15, -5, 0.5, -15, -5, 0.5, 15, 5, -0.5, -15, 5, -0.5, 15, -5, -0.5, -15, 5, -0.5, -15, -5, -0.5, 15, -5, -0.5, 15, 5, 0.5, 15, 5, -0.5, 15, -5, 0.5, 15, 5, -0.5, 15, -5, -0.5, 15, -5, 0.5, -15, 5, -0.5, -15, 5, 0.5, -15, -5, -0.5, -15, 5, 0.5, -15, -5, 0.5, -15, -5, -0.5, 15, 5, 0.5, -15, 5, 0.5, 15, 5, -0.5, -15, 5, 0.5, -15, 5, -0.5, 15, 5, -0.5, -15, -5, 0.5, 15, -5, 0.5, -15, -5, -0.5, 15, -5, 0.5, 15, -5, -0.5, -15, -5, -0.5)
+
+[sub_resource type="Sky" id="Sky_ykeeq"]
+
+[sub_resource type="Environment" id="Environment_apte6"]
+sky = SubResource("Sky_ykeeq")
+ambient_light_color = Color(2.4065375e-07, 0, 0.60809505, 1)
+ambient_light_energy = 5.0
+volumetric_fog_enabled = true
 
 [node name="World_map_v2" type="Node3D" unique_id=1930803997]
 
@@ -381,3 +389,6 @@ mesh = SubResource("BoxMesh_4v4d5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible_walls/MeshInstance3D3/StaticBody3D" unique_id=89851222]
 shape = SubResource("ConcavePolygonShape3D_105xe")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=874039549]
+environment = SubResource("Environment_apte6")
