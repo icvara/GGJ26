@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c3tbtpdw4sfmm"]
+[gd_scene load_steps=0 format=3 uid="uid://c3tbtpdw4sfmm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_podvm"]
 size = Vector2(100, 100)

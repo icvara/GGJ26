@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 
+func update_time(value):
+	$ProgressBar.value = value
+
 func _on_player_update(id):
 	print("player " + str(id) + " joined")
 	if id == 0:

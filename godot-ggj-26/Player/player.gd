@@ -18,6 +18,7 @@ var timer = 0
 signal player_has_died(id)
 
 @export var speed := 5.0
+var IAcontrol = false
 
 
 func _ready() -> void:
@@ -27,11 +28,7 @@ func _ready() -> void:
 	#item_collected = randi_range(1,10)
 	
 func _process(delta: float) -> void:
-	if !isDead:
-		if not is_on_floor():
-			velocity.y -= gravity * delta
 
-		move_and_slide()
 		'timer += delta
 		if timer > 0.2:
 			timer = 0
@@ -47,45 +44,52 @@ func _process(delta: float) -> void:
 				Die()
 
 func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+
 	if !isDead:
 		var direction = Vector3()
 
-		
-		direction = Vector3(Input.get_joy_axis(playerID, JOY_AXIS_LEFT_X),0,Input.get_joy_axis(playerID, JOY_AXIS_LEFT_Y))
-		if direction.x <0.6 and direction.x > -0.6:
-			direction.x = 0
-		if direction.z <0.6 and direction.z > -0.6:
-			direction.z = 0
+		if !IAcontrol:
+			direction = Vector3(Input.get_joy_axis(playerID, JOY_AXIS_LEFT_X),0,Input.get_joy_axis(playerID, JOY_AXIS_LEFT_Y))
+			if direction.x <0.6 and direction.x > -0.6:
+				direction.x = 0
+			if direction.z <0.6 and direction.z > -0.6:
+				direction.z = 0
 
-		if Input.is_joy_button_pressed(playerID, 0):
-			DoAction()
+			if Input.is_joy_button_pressed(playerID, 0):
+				DoAction()
 			
 		
-		if playerID == 3: #TEMP KEYBOARD CONTROL
-			#direction = Vector3()
-			if Input.is_action_just_pressed("action"):
-				DoAction()
+			if playerID == 3: #TEMP KEYBOARD CONTROL
+				#direction = Vector3()
+				if Input.is_action_just_pressed("action"):
+					DoAction()
 
-			if Input.is_action_pressed("move_down"):
-				direction.z = 1
-			if Input.is_action_pressed("move_up"):
-				direction.z = -1
-			if Input.is_action_pressed("move_left"):
-				direction.x = -1
-			if Input.is_action_pressed("move_right"):
-				direction.x = 1	
-		#if input_vector.length() > 0:
-			#input_vector = input_vector.normalized()
+				if Input.is_action_pressed("move_down"):
+					direction.z = 1
+				if Input.is_action_pressed("move_up"):
+					direction.z = -1
+				if Input.is_action_pressed("move_left"):
+					direction.x = -1
+				if Input.is_action_pressed("move_right"):
+					direction.x = 1	
+			#if input_vector.length() > 0:
+				#input_vector = input_vector.normalized()
 
-		#var direction = Vector2(input_vector.x, input_vector.y)
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
+			#var direction = Vector2(input_vector.x, input_vector.y)
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+		else:
+			activate_brain()
+		
+		
 		if direction != Vector3(0,0,0):
-			$Action_Area.look_at($Action_Area.global_position + Vector3(direction.z,0,-direction.x),Vector3.UP)
-		move_and_slide()
+				$Action_Area.look_at($Action_Area.global_position + Vector3(direction.z,0,-direction.x),Vector3.UP)
 		
 		if mask_equipped:
 				mask_equipped.global_position = global_position + head_pos
+		move_and_slide()
 
 func Die():
 	player_has_died.emit(playerID)
@@ -124,6 +128,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			collect_item()
 			body.queue_free()		
 
+func activate_brain():
+	pass
 
 func DoAction():
 	$Action_Area.show()

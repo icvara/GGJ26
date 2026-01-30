@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 GlobalParameter="*uid://be3vwgg4n3elx"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 move_left={

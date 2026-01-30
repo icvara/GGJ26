@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dvbyi753phrhr"]
+
+[ext_resource type="Script" uid="uid://iyor1p7drmjd" path="res://Infected/infected.gd" id="1_cfk8j"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sykxf"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_cfk8j"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cfk8j"]
+height = 1.019043
+radius = 6.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jcoky"]
+height = 1.019043
+radius = 3.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0wapr"]
+height = 1.019043
+radius = 1.0
+
+[node name="Infected" type="CharacterBody3D" unique_id=187273377]
+script = ExtResource("1_cfk8j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=435848850]
+shape = SubResource("SphereShape3D_sykxf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=876224767]
+mesh = SubResource("SphereMesh_cfk8j")
+
+[node name="Detection" type="Area3D" parent="." unique_id=2079793504]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection" unique_id=273719060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.051513672, 0)
+shape = SubResource("CylinderShape3D_cfk8j")
+
+[node name="Rush_area" type="Area3D" parent="." unique_id=423205025]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rush_area" unique_id=144547271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.051513672, 0)
+shape = SubResource("CylinderShape3D_jcoky")
+
+[node name="Action_area" type="Area3D" parent="." unique_id=2129387706]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Action_area" unique_id=985146894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.051513672, 0)
+shape = SubResource("CylinderShape3D_0wapr")
+
+[connection signal="body_entered" from="Detection" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Detection" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Rush_area" to="." method="_on_rush_area_body_entered"]
+[connection signal="body_entered" from="Action_area" to="." method="_on_action_area_body_entered"]
