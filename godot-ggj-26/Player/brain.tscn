@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://caalaw4kluble"]
+
+[ext_resource type="Script" uid="uid://cmprqe5334dt7" path="res://Player/brain.gd" id="1_0wmby"]
+
+[node name="Brain" type="Node3D" unique_id=970944579]
+script = ExtResource("1_0wmby")

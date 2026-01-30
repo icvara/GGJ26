@@ -72,5 +72,9 @@ mesh = SubResource("BoxMesh_l8h54")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9546015, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_4ntmi")
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=225901511]
+transform = Transform3D(1.4285715, 0, 0, 0, 1.0090765, 1.0112275, 0, -1.0112275, 1.0090765, 0, 16.61709, 10.770257)
+current = true
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Action_Area" to="." method="_on_action_area_body_entered"]
