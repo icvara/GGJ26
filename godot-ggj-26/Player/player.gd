@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var gravity: float = 100.0
 var playerID = 0
+var playerIDctrl = 0
 
 var mask_equipped = null
 var mask_timer_finished = true
@@ -40,6 +41,7 @@ func _ready() -> void:
 	current_HP = max_HP
 	$DebugLabel.text = str(current_HP)
 	$Label3D_playername.text = "Player" + str(playerID)
+	playerIDctrl = playerID
 	#item_collected = randi_range(1,10)
 
 
@@ -84,24 +86,35 @@ func _physics_process(delta):
 
 		if Input.is_joy_button_pressed(playerID, 0):
 			DoAction()
-			
+		
 		#KEYBOARD
-		if Input.is_action_pressed("D"+str(playerID)):
+
+		if Input.is_action_just_pressed("changeCtrl_L"):
+			if playerIDctrl == 0:
+				playerIDctrl = 3 
+			elif playerIDctrl == 3:
+				playerIDctrl =0
+		if Input.is_action_just_pressed("changeCTRL_R"):
+			if playerIDctrl == 0:
+				playerIDctrl = 3 
+			elif playerIDctrl == 3:
+				playerIDctrl =0
+		if Input.is_action_pressed("D"+str(playerIDctrl)):
 			direction.z = 1
-		if Input.is_action_pressed("U"+str(playerID)):
+		if Input.is_action_pressed("U"+str(playerIDctrl)):
 			direction.z = -1
-		if Input.is_action_pressed("L"+str(playerID)):
+		if Input.is_action_pressed("L"+str(playerIDctrl)):
 			direction.x = -1
-		if Input.is_action_pressed("R"+str(playerID)):
+		if Input.is_action_pressed("R"+str(playerIDctrl)):
 			direction.x = 1	
 		
-		if Input.is_action_just_released("A"+str(playerID)):
+		if Input.is_action_just_released("A"+str(playerIDctrl)):
 			holding = false
 			long_pressed = false
 			hold_time = 0.0
 			DoAction()	
 			
-		if Input.is_action_pressed("A"+str(playerID)) or  Input.is_joy_button_pressed(playerID, 0):
+		if Input.is_action_pressed("A"+str(playerIDctrl)) or  Input.is_joy_button_pressed(playerID, 0):
 			if  holding == false:
 				holding = true
 				hold_time = 0.0
