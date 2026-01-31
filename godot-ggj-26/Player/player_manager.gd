@@ -7,16 +7,21 @@ signal newplayer_join(id)
 
 var player_status = [0,0,0,0]
 var infection_rate_at_spawn = 0.5
-
-func _physics_process(delta: float) -> void:
+var position_list = [Vector3(5,0,5),Vector3(5+14,0,5),Vector3(5,0,5-14),Vector3(5+14,0,5-14)]
+func _ready() -> void:
+	for i in range(4):
+		invoke_player(i, position_list[i])
+		
+		
+#func _physics_process(delta: float) -> void:
 	#if GlobalParameter.ishosting:
-	if Input.is_action_pressed("join_game"):
+	'if Input.is_action_pressed("join_game"):
 		print("pressed")
 		#invoke_player.rpc_id(1,3)
-		invoke_player(3)
+		invoke_player(3)'
 
 
-	if Input.is_joy_button_pressed(0, 0):
+	'if Input.is_joy_button_pressed(0, 0):
 		#invoke_player.rpc_id(1,0)
 		invoke_player(0)
 
@@ -30,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_joy_button_pressed(3, 0):
 		#invoke_player.rpc_id(1,3)
-		invoke_player(3)
+		invoke_player(3)'
 
 		
 
@@ -42,16 +47,17 @@ func infect_player_manager(p):
 		p.add_child(newinfection)
 
 @rpc("any_peer","call_local")	
-func invoke_player(ID):
+func invoke_player(ID,pos):
 	print(ID)
 	if player_status[ID] == 0:
 		player_status[ID] = 1
 		var newplayer = player_scene.instantiate()
+		newplayer.position = pos
 		newplayer.name = str(multiplayer.get_unique_id())
 		newplayer.playerID = ID
 		newplayer.player_has_died.connect(_on_player_death)
 		add_child(newplayer)
-		infect_player_manager(newplayer)
+		#infect_player_manager(newplayer)
 		newplayer_join.emit(ID)
 
 

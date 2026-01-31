@@ -7,21 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_f52ns"]
 [ext_resource type="PackedScene" uid="uid://632f50g7ngck" path="res://Mask/mask.tscn" id="6_2pltu"]
 [ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="7_f52ns"]
-[ext_resource type="PackedScene" uid="uid://twa1n1gqieqd" path="res://station/Base/base.tscn" id="8_l5ukw"]
-[ext_resource type="PackedScene" uid="uid://bhc18o0uutig0" path="res://items/rn_gobject_on_map.tscn" id="10_02kkc"]
-[ext_resource type="PackedScene" uid="uid://q5m2skpb4ndc" path="res://station/check_station/check_station.tscn" id="11_02kkc"]
-[ext_resource type="PackedScene" uid="uid://c7rbpekupu8hi" path="res://station/infection_fog.tscn" id="12_aomqu"]
-[ext_resource type="PackedScene" uid="uid://b8vy3gl58do51" path="res://Maps/mapv_3.tscn" id="13_jgkyn"]
+[ext_resource type="PackedScene" uid="uid://b30fv2kpgu24d" path="res://Maps/ROOMS/room_manager.tscn" id="12_krmtw"]
 
 [node name="Main_Game" type="Node3D" unique_id=898975577]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1713134478]
-transform = Transform3D(1, 0, 0, 0, 0.6818069, 0.73153216, 0, -0.73153216, 0.6818069, 3.6593103, 12.851782, 10.509427)
+transform = Transform3D(1, 0, 0, 0, 0.5981847, 0.8013582, 0, -0.8013582, 0.5981847, 7, 14.407072, 23.983728)
 
-[node name="Game_manager" parent="." unique_id=1137261711 node_paths=PackedStringArray("player_mangement", "HUD", "BaseCamp") instance=ExtResource("3_dugkq")]
+[node name="Game_manager" parent="." unique_id=1137261711 node_paths=PackedStringArray("player_mangement", "HUD") instance=ExtResource("3_dugkq")]
 player_mangement = NodePath("../Player_manager")
 HUD = NodePath("../HUD")
-BaseCamp = NodePath("../Base")
 
 [node name="Player_manager" parent="." unique_id=1146100425 instance=ExtResource("4_2pltu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6310005, 3.7631774, 8.56362)
@@ -31,32 +26,15 @@ infection = ExtResource("5_4srsv")
 [node name="HUD" parent="." unique_id=1885462862 instance=ExtResource("5_f52ns")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=408525928]
-transform = Transform3D(0.7951772, 0.49415216, 0.3514353, -0.60637707, 0.64801025, 0.4608574, 0, -0.57956564, 0.81492555, 0, 0, 0)
+transform = Transform3D(0.8128772, -0.48303694, 0.32543218, 0, 0.55874425, 0.82934016, -0.5824351, -0.6741516, 0.45419043, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Mask" parent="." unique_id=1427028063 instance=ExtResource("6_2pltu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9739122, 1.2557755, 6.6683407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.1, 10)
 
 [node name="Atmosphere" type="AudioStreamPlayer" parent="." unique_id=1316371831]
 stream = ExtResource("7_f52ns")
 volume_db = -5.0
 autoplay = true
 
-[node name="Base" parent="." unique_id=134484637 instance=ExtResource("8_l5ukw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.231929, 1.1195796, 7.0725374)
-
-[node name="RNGobjectOnMap" parent="." unique_id=1211229117 instance=ExtResource("10_02kkc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, -5)
-grid_size = Vector3i(20, 1, 20)
-cell_size = 1.0
-
-[node name="Check_station" parent="." unique_id=50691787 instance=ExtResource("11_02kkc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8788757, 0.8581095, 2.09803)
-
-[node name="infection_fog" parent="." unique_id=1624113880 instance=ExtResource("12_aomqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.528002, 0, 0)
-
-[node name="infection_fog2" parent="." unique_id=1180420148 instance=ExtResource("12_aomqu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.493576, 0, -25.783878)
-
-[node name="mapv3" parent="." unique_id=1573682128 instance=ExtResource("13_jgkyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+[node name="Room_manager" parent="." unique_id=2113806601 instance=ExtResource("12_krmtw")]

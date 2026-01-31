@@ -4,15 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://65rtgrnax6qc" path="res://Infection/infection.tscn" id="2_26cwi"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_26cwi"]
-data = PackedVector3Array(-25, 2, 25, 25, 2, 25, -25, -2, 25, 25, 2, 25, 25, -2, 25, -25, -2, 25, 25, 2, -25, -25, 2, -25, 25, -2, -25, -25, 2, -25, -25, -2, -25, 25, -2, -25, 25, 2, 25, 25, 2, -25, 25, -2, 25, 25, 2, -25, 25, -2, -25, 25, -2, 25, -25, 2, -25, -25, 2, 25, -25, -2, -25, -25, 2, 25, -25, -2, 25, -25, -2, -25, 25, 2, 25, -25, 2, 25, 25, 2, -25, -25, 2, 25, -25, 2, -25, 25, 2, -25, -25, -2, 25, 25, -2, 25, -25, -2, -25, 25, -2, 25, 25, -2, -25, -25, -2, -25)
+data = PackedVector3Array(-7.5, 1.5, 7.5, 7.5, 1.5, 7.5, -7.5, -1.5, 7.5, 7.5, 1.5, 7.5, 7.5, -1.5, 7.5, -7.5, -1.5, 7.5, 7.5, 1.5, -7.5, -7.5, 1.5, -7.5, 7.5, -1.5, -7.5, -7.5, 1.5, -7.5, -7.5, -1.5, -7.5, 7.5, -1.5, -7.5, 7.5, 1.5, 7.5, 7.5, 1.5, -7.5, 7.5, -1.5, 7.5, 7.5, 1.5, -7.5, 7.5, -1.5, -7.5, 7.5, -1.5, 7.5, -7.5, 1.5, -7.5, -7.5, 1.5, 7.5, -7.5, -1.5, -7.5, -7.5, 1.5, 7.5, -7.5, -1.5, 7.5, -7.5, -1.5, -7.5, 7.5, 1.5, 7.5, -7.5, 1.5, 7.5, 7.5, 1.5, -7.5, -7.5, 1.5, 7.5, -7.5, 1.5, -7.5, 7.5, 1.5, -7.5, -7.5, -1.5, 7.5, 7.5, -1.5, 7.5, -7.5, -1.5, -7.5, 7.5, -1.5, 7.5, 7.5, -1.5, -7.5, -7.5, -1.5, -7.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4s5t5"]
 transparency = 1
-albedo_color = Color(0.10980392, 0.2784314, 0.33333334, 0.7294118)
+albedo_color = Color(0.10980392, 0.2784314, 0.33333334, 0.8901961)
 
 [sub_resource type="BoxMesh" id="BoxMesh_26cwi"]
 material = SubResource("StandardMaterial3D_4s5t5")
-size = Vector3(50, 4, 50)
+size = Vector3(15, 3, 15)
 
 [node name="infection_fog" type="Node3D" unique_id=1722321046]
 script = ExtResource("1_4s5t5")
@@ -20,7 +20,7 @@ infection_scene = ExtResource("2_26cwi")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1855207783]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=996751339]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=671710473]
 shape = SubResource("ConcavePolygonShape3D_26cwi")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1930382854]

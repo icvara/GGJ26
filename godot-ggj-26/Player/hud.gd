@@ -17,4 +17,5 @@ func _on_player_update(id):
 		
 		
 func _on_max_storage():
-	$win_window.show()
+	pass
+	#$win_window.show()

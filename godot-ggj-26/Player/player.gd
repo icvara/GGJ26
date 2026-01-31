@@ -17,7 +17,7 @@ var timer = 0
 
 signal player_has_died(id)
 
-@export var speed := 5.0
+@export var speed := 15.0
 var IAcontrol = false
 
 
@@ -50,38 +50,49 @@ func _physics_process(delta):
 	if !isDead:
 		var direction = Vector3()
 
-		if !IAcontrol:
-			direction = Vector3(Input.get_joy_axis(playerID, JOY_AXIS_LEFT_X),0,Input.get_joy_axis(playerID, JOY_AXIS_LEFT_Y))
-			if direction.x <0.6 and direction.x > -0.6:
-				direction.x = 0
-			if direction.z <0.6 and direction.z > -0.6:
-				direction.z = 0
-
-			if Input.is_joy_button_pressed(playerID, 0):
-				DoAction()
 			
-		
-			if playerID == 3: #TEMP KEYBOARD CONTROL
-				#direction = Vector3()
-				if Input.is_action_just_pressed("action"):
-					DoAction()
+		#CONTROLLER
+		direction = Vector3(Input.get_joy_axis(playerID, JOY_AXIS_LEFT_X),0,Input.get_joy_axis(playerID, JOY_AXIS_LEFT_Y))
+		if direction.x <0.6 and direction.x > -0.6:
+			direction.x = 0
+		if direction.z <0.6 and direction.z > -0.6:
+			direction.z = 0
 
-				if Input.is_action_pressed("move_down"):
-					direction.z = 1
-				if Input.is_action_pressed("move_up"):
-					direction.z = -1
-				if Input.is_action_pressed("move_left"):
-					direction.x = -1
-				if Input.is_action_pressed("move_right"):
-					direction.x = 1	
-			#if input_vector.length() > 0:
-				#input_vector = input_vector.normalized()
+		if Input.is_joy_button_pressed(playerID, 0):
+			DoAction()
+			
+		#KEYBOARD
+		if Input.is_action_pressed("D"+str(playerID)):
+			direction.z = 1
+		if Input.is_action_pressed("U"+str(playerID)):
+			direction.z = -1
+		if Input.is_action_pressed("L"+str(playerID)):
+			direction.x = -1
+		if Input.is_action_pressed("R"+str(playerID)):
+			direction.x = 1	
+		if Input.is_action_just_pressed("A"+str(playerID)):
+			DoAction()	
+		'if playerID == 3: #TEMP KEYBOARD CONTROL
+			#direction = Vector3()
+			if Input.is_action_just_pressed("action"):
+				DoAction()
+
+			if Input.is_action_pressed("move_down"):
+				direction.z = 1
+			if Input.is_action_pressed("move_up"):
+				direction.z = -1
+			if Input.is_action_pressed("move_left"):
+				direction.x = -1
+			if Input.is_action_pressed("move_right"):
+				direction.x = 1	
+		#if input_vector.length() > 0:
+			#input_vector = input_vector.normalized()'
 
 			#var direction = Vector2(input_vector.x, input_vector.y)
-			velocity.x = direction.x * speed
-			velocity.z = direction.z * speed
-		else:
-			activate_brain()
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+		'else:
+			activate_brain()'
 		
 		
 		if direction != Vector3(0,0,0):
