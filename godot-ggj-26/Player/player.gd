@@ -30,6 +30,10 @@ var acceleration = 100
 var IAcontrol = false
 
 
+var holding = false
+var hold_time = 0
+var long_pressed = false
+var LONG_PRESS_TIME = 0.6
 signal maskchanged(ID, value)
 
 func _ready() -> void:
@@ -37,10 +41,19 @@ func _ready() -> void:
 	$DebugLabel.text = str(current_HP)
 	$Label3D_playername.text = "Player" + str(playerID)
 	#item_collected = randi_range(1,10)
-	
-func _process(delta: float) -> void:
 
-		'timer += delta
+
+
+
+
+func on_long_press():
+	if !mask_equipped:
+		put_mask()
+	else:
+		remove_mask()
+'func _process(delta: float) -> void:
+
+		timer += delta
 		if timer > 0.2:
 			timer = 0
 			if mask_equipped == null:
@@ -48,11 +61,11 @@ func _process(delta: float) -> void:
 				$DebugLabel.text = str(current_HP)
 			else:
 				current_HP = clamp(current_HP + 1, 0, max_HP)
-				$DebugLabel.text = str(current_HP)'
+				$DebugLabel.text = str(current_HP)
 
 			
 		if current_HP <= 0 :
-				Die()
+				Die()'
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -81,8 +94,28 @@ func _physics_process(delta):
 			direction.x = -1
 		if Input.is_action_pressed("R"+str(playerID)):
 			direction.x = 1	
-		if Input.is_action_just_pressed("A"+str(playerID)):
+		
+		if Input.is_action_just_released("A"+str(playerID)):
+			holding = false
+			long_pressed = false
+			hold_time = 0.0
 			DoAction()	
+			
+		if Input.is_action_pressed("A"+str(playerID)) or  Input.is_joy_button_pressed(playerID, 0):
+			if  holding == false:
+				holding = true
+				hold_time = 0.0
+				long_pressed = false
+
+			hold_time += delta
+			if hold_time >= LONG_PRESS_TIME and not long_pressed:
+				on_long_press()
+				long_pressed = true
+
+
+			
+		#if Input.is_action_just_pressed("A"+str(playerID)):
+		#		DoAction()	
 		'if playerID == 3: #TEMP KEYBOARD CONTROL
 			#direction = Vector3()
 			if Input.is_action_just_pressed("action"):
@@ -146,13 +179,26 @@ func collect_item(item):
 	if item_in_proximiy.has(item):
 		item_in_proximiy.erase(item)
 
-	if item.item_ID == "mask":
+	'if item.item_ID == "mask":
 		item.rotation = Vector3(0,0,0)
 		put_on_mask(item)
-	else:
-		item_hold = item
-		item_hold.global_position = $Action_Area/MeshInstance3D.global_position +Vector3(0,1,0)
+	else:'
+	item_hold = item
+	item_hold.global_position = $Action_Area/MeshInstance3D.global_position +Vector3(0,1,0)
 
+
+func put_mask():
+	if item_hold:
+		if item_hold.item_ID == "mask":
+			item_hold.rotation = Vector3(0,0,0)
+			put_on_mask(item_hold)
+			item_hold = null
+	
+func remove_mask():
+	if mask_equipped:
+		if !item_hold:
+			item_hold = mask_equipped
+			mask_equipped = null
 	
 
 	#item_collected += 1
@@ -195,30 +241,32 @@ func activate_brain():
 	pass
 
 func DoAction():
-	$Action_Area.show()
+	'$Action_Area.show()
 	$Action_Area.monitoring = true
 	await get_tree().create_timer(.2).timeout
 	$Action_Area.monitoring = false
-	$Action_Area.hide()
+	$Action_Area.hide()'
 	
-	
-	if station_in_proximity.size() > 0:
-		var station = get_closer(station_in_proximity)
+	#remove_mask()
+	if holding == false:
+		if station_in_proximity.size() > 0:
+			var station = get_closer(station_in_proximity)
+			
+			if item_hold:
+				put_item_station(station)
+			else:
+				remove_item_from_station(station)
+					
 		
-		if item_hold:
-			put_item_station(station)
+		
+		
+		if item_in_proximiy.size() == 0:
+			if item_hold:
+				drop_item()
 		else:
-			remove_item_from_station(station)
-				
+			collect_item(get_closer(item_in_proximiy))
+			
 	
-	
-	
-	if item_in_proximiy.size() == 0:
-		if item_hold:
-			drop_item()
-	else:
-		collect_item(get_closer(item_in_proximiy))
-		
 func put_item_station(station)	:
 	print(station.name)
 
