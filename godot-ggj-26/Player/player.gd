@@ -135,6 +135,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			if body.mask_equipped != null and body.mask_timer_finished:
 				put_on_mask(body.mask_equipped)
 				body.mask_equipped = null
+				print("dddd")
+				print(playerID)
+				print(body.playerID)
 		if body.is_in_group("item"):
 			collect_item()
 			body.queue_free()		

@@ -11,8 +11,8 @@ albedo_color = Color(0.9413108, 0.3505372, 0.50618565, 1)
 material = SubResource("StandardMaterial3D_l8h54")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l8h54"]
-radius = 0.8
-height = 2.3
+radius = 1.4204102
+height = 2.8408203
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_l8h54"]
 properties/0/path = NodePath(".:position")

@@ -12,7 +12,8 @@ func _process(delta: float) -> void:
 	timer -= delta
 	if timer <= 0:
 		for p in players_in_fog:
-			fog_infection_of_player(p)
+			pass
+			#fog_infection_of_player(p)
 		timer = randf_range(0.,2.) #Maybe do a curve random here
 	pass
 
