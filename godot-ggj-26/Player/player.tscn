@@ -10,20 +10,8 @@ albedo_color = Color(0.9413108, 0.3505372, 0.50618565, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4ntmi"]
 material = SubResource("StandardMaterial3D_l8h54")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l8h54"]
-radius = 1.4204102
-height = 2.8408203
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_l8h54"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath("Label3D_playername:text")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath("DebugLabel:text")
-properties/2/spawn = true
-properties/2/replication_mode = 1
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8h54"]
+size = Vector3(2.4860535, 2.6957397, 1.8614502)
 
 [sub_resource type="BoxMesh" id="BoxMesh_l8h54"]
 
@@ -47,7 +35,9 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1003833894]
-shape = SubResource("CapsuleShape3D_l8h54")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.95962423, 0.10220341, -0.022459583)
+shape = SubResource("BoxShape3D_l8h54")
+debug_color = Color(0.86141115, 0.3306814, 0.38880095, 0.41960785)
 
 [node name="DebugLabel" type="Label3D" parent="." unique_id=1303395951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.109378, 0)
@@ -61,9 +51,6 @@ billboard = 1
 text = "Yes"
 font_size = 108
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1500141045]
-replication_config = SubResource("SceneReplicationConfig_l8h54")
-
 [node name="Action_Area" type="Area3D" parent="." unique_id=189341572]
 visible = false
 monitoring = false
@@ -76,6 +63,8 @@ mesh = SubResource("BoxMesh_l8h54")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9546015, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_4ntmi")
 
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="Action_Area" to="." method="_on_action_area_body_entered"]

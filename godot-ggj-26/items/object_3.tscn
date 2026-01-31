@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cbjn8f4b2wpym"]
+
+[ext_resource type="Script" uid="uid://ck2ulbq8c6t5w" path="res://items/object.gd" id="1_bltbi"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ol1fq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ol1fq"]
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm8i7"]
+albedo_color = Color(0.46258116, 0.92939496, 0.9360228, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ol1fq"]
+material = SubResource("StandardMaterial3D_cm8i7")
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8d01g"]
+radius = 0.82421875
+
+[node name="item3" type="RigidBody3D" unique_id=689042725 groups=["item"]]
+collision_layer = 4
+collision_mask = 3
+mass = 100.0
+physics_material_override = SubResource("PhysicsMaterial_ol1fq")
+gravity_scale = 10.0
+script = ExtResource("1_bltbi")
+item_ID = "3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2096220946]
+shape = SubResource("CylinderShape3D_ol1fq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=728517360]
+mesh = SubResource("CylinderMesh_ol1fq")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2042536513]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1750662780]
+shape = SubResource("CylinderShape3D_8d01g")

@@ -20,7 +20,7 @@ func _enter_tree() -> void:
 
 			var nr = rooms[i].instantiate()
 			nr.position = Vector3(i*room_size,0,j*room_size)
-			nr.get_node("Label3D").text = str(count)
+			#nr.get_node("Label3D").text = str(count)
 			#nr.rotation.y =deg_to_rad(rotation_list[count])
 			count += 1
 			add_child(nr)

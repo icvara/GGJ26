@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://c1ieubwd83hes" path="res://Player/player_manager.tscn" id="4_2pltu"]
 [ext_resource type="PackedScene" uid="uid://65rtgrnax6qc" path="res://Infection/infection.tscn" id="5_4srsv"]
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_f52ns"]
-[ext_resource type="PackedScene" uid="uid://632f50g7ngck" path="res://Mask/mask.tscn" id="6_2pltu"]
 [ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="7_f52ns"]
 [ext_resource type="PackedScene" uid="uid://b30fv2kpgu24d" path="res://Maps/ROOMS/room_manager.tscn" id="12_krmtw"]
 
@@ -18,19 +17,13 @@ transform = Transform3D(1, 0, 0, 0, 0.5981847, 0.8013582, 0, -0.8013582, 0.59818
 player_mangement = NodePath("../Player_manager")
 HUD = NodePath("../HUD")
 
-[node name="Player_manager" parent="." unique_id=1146100425 instance=ExtResource("4_2pltu")]
+[node name="Player_manager" parent="." unique_id=1146100425 node_paths=PackedStringArray("HUD") instance=ExtResource("4_2pltu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6310005, 3.7631774, 8.56362)
 player_scene = ExtResource("2_yx7mw")
 infection = ExtResource("5_4srsv")
+HUD = NodePath("../HUD")
 
 [node name="HUD" parent="." unique_id=1885462862 instance=ExtResource("5_f52ns")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=408525928]
-transform = Transform3D(0.8128772, -0.48303694, 0.32543218, 0, 0.55874425, 0.82934016, -0.5824351, -0.6741516, 0.45419043, 0, 0, 0)
-shadow_enabled = true
-
-[node name="Mask" parent="." unique_id=1427028063 instance=ExtResource("6_2pltu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.1, 10)
 
 [node name="Atmosphere" type="AudioStreamPlayer" parent="." unique_id=1316371831]
 stream = ExtResource("7_f52ns")

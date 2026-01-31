@@ -19,6 +19,8 @@ script = ExtResource("1_4s5t5")
 infection_scene = ExtResource("2_26cwi")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1855207783]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=671710473]
 shape = SubResource("ConcavePolygonShape3D_26cwi")

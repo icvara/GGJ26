@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://nqg8qy6ud6a5"]
+
+[ext_resource type="Script" uid="uid://e0mym0k22jev" path="res://station/Transform_station/station_transform.gd" id="1_tb7mr"]
+[ext_resource type="PackedScene" uid="uid://dd3f3oxio20xd" path="res://items/object_MASK.tscn" id="2_tb7mr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tx3ea"]
+albedo_color = Color(0.21568628, 0.6039216, 0.7137255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5uhnf"]
+material = SubResource("StandardMaterial3D_tx3ea")
+size = Vector3(1, 1, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tb7mr"]
+data = PackedVector3Array(-0.5, 0.5, 2, 0.5, 0.5, 2, -0.5, -0.5, 2, 0.5, 0.5, 2, 0.5, -0.5, 2, -0.5, -0.5, 2, 0.5, 0.5, -2, -0.5, 0.5, -2, 0.5, -0.5, -2, -0.5, 0.5, -2, -0.5, -0.5, -2, 0.5, -0.5, -2, 0.5, 0.5, 2, 0.5, 0.5, -2, 0.5, -0.5, 2, 0.5, 0.5, -2, 0.5, -0.5, -2, 0.5, -0.5, 2, -0.5, 0.5, -2, -0.5, 0.5, 2, -0.5, -0.5, -2, -0.5, 0.5, 2, -0.5, -0.5, 2, -0.5, -0.5, -2, 0.5, 0.5, 2, -0.5, 0.5, 2, 0.5, 0.5, -2, -0.5, 0.5, 2, -0.5, 0.5, -2, 0.5, 0.5, -2, -0.5, -0.5, 2, 0.5, -0.5, 2, -0.5, -0.5, -2, 0.5, -0.5, 2, 0.5, -0.5, -2, -0.5, -0.5, -2)
+
+[node name="Station_transform" type="StaticBody3D" unique_id=213299388 groups=["station"]]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_tb7mr")
+item_ID_in = "3"
+item_scene_out = ExtResource("2_tb7mr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2137152999]
+mesh = SubResource("BoxMesh_5uhnf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=784959015]
+shape = SubResource("ConcavePolygonShape3D_tb7mr")
+
+[node name="Item emplacement" type="Node3D" parent="." unique_id=1894577196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4638182, -1.1613307)

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://1ojckm40y7bp"]
+
+[ext_resource type="Script" uid="uid://bb081e055ewt0" path="res://station/Transfer station/transfer.gd" id="1_oswul"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oswul"]
+size = Vector3(1.5, 3, 3)
+
+[node name="Transfer" type="Node3D" unique_id=1367440031 groups=["station"]]
+script = ExtResource("1_oswul")
+
+[node name="A" type="Area3D" parent="." unique_id=275347577 groups=["station"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.053149, 0, 0)
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="A" unique_id=630421734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9005475, 0, 0)
+shape = SubResource("BoxShape3D_oswul")
+debug_color = Color(0.85685813, 0.34047267, 0.3635061, 0.41960785)
+
+[node name="B" type="Area3D" parent="." unique_id=2078769235 groups=["station"]]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="B" unique_id=994300367]
+shape = SubResource("BoxShape3D_oswul")
+debug_color = Color(0.85685813, 0.34047267, 0.3635061, 0.41960785)
+
+[node name="posA" type="Node3D" parent="." unique_id=136897628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.478778, -1.4606495, 0)
+
+[node name="posB" type="Node3D" parent="." unique_id=583957484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0817792, -0.9652047, 0)

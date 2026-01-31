@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://b30fv2kpgu24d"]
 
 [ext_resource type="Script" uid="uid://byreorvn5qkpx" path="res://Maps/ROOMS/room_manager.gd" id="1_w3vmh"]
-[ext_resource type="PackedScene" uid="uid://cpkyxs66w0x6k" path="res://Maps/ROOMS/room_1.tscn" id="2_t3m7f"]
+[ext_resource type="PackedScene" uid="uid://c74dm27hxcfnr" path="res://Maps/ROOMS/room_a.tscn" id="2_3rqt4"]
+[ext_resource type="PackedScene" uid="uid://od5wvenc0nk" path="res://Maps/ROOMS/room_b.tscn" id="3_3rqt4"]
 [ext_resource type="PackedScene" uid="uid://c7rbpekupu8hi" path="res://station/infection_fog.tscn" id="3_11uwa"]
 [ext_resource type="PackedScene" uid="uid://cr67anitn10n5" path="res://Maps/ROOMS/room_2.tscn" id="3_y0iey"]
 
 [node name="Room_manager" type="Node3D" unique_id=2113806601]
 script = ExtResource("1_w3vmh")
-rooms = Array[PackedScene]([ExtResource("2_t3m7f"), ExtResource("3_y0iey")])
+rooms = Array[PackedScene]([ExtResource("2_3rqt4"), ExtResource("3_3rqt4"), ExtResource("3_y0iey")])
 
 [node name="infection_fog" parent="." unique_id=1722321046 instance=ExtResource("3_11uwa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.2144485, 0.19617033)

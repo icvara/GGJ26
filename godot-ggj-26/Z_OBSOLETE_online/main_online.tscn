@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cexsc1ypyp3sp"]
 
-[ext_resource type="Script" uid="uid://c2edm0siu7edo" path="res://online/main_online.gd" id="1_euyk3"]
+[ext_resource type="Script" uid="uid://c2edm0siu7edo" path="res://Z_OBSOLETE_online/main_online.gd" id="1_euyk3"]
 [ext_resource type="PackedScene" uid="uid://c1ieubwd83hes" path="res://Player/player_manager.tscn" id="2_nql74"]
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="3_5j502"]
 [ext_resource type="PackedScene" path="res://Maps/world_map_v_2.tscn" id="3_mt8b2"]

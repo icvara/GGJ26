@@ -2,12 +2,13 @@ extends Node3D
 
 @export var player_scene : PackedScene
 @export var infection : PackedScene
+@export var HUD : Node
 
 signal newplayer_join(id)
 
 var player_status = [0,0,0,0]
 var infection_rate_at_spawn = 0.5
-var position_list = [Vector3(5,0,5),Vector3(5+14,0,5),Vector3(5,0,5-14),Vector3(5+14,0,5-14)]
+var position_list = [Vector3(5,0,5),Vector3(5+14,0,5-14),Vector3(5,0,5-14),Vector3(5+14,0,5)]
 func _ready() -> void:
 	for i in range(4):
 		invoke_player(i, position_list[i])
@@ -56,6 +57,7 @@ func invoke_player(ID,pos):
 		newplayer.name = str(multiplayer.get_unique_id())
 		newplayer.playerID = ID
 		newplayer.player_has_died.connect(_on_player_death)
+		newplayer.maskchanged.connect(HUD._on_mask_update)
 		add_child(newplayer)
 		#infect_player_manager(newplayer)
 		newplayer_join.emit(ID)

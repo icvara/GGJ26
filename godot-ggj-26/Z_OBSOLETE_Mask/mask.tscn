@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://632f50g7ngck"]
+
+[ext_resource type="Script" uid="uid://cbgqwhcmmkfrl" path="res://Z_OBSOLETE_Mask/mask.gd" id="1_f250e"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bp1os"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cq5j3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1y6m"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[node name="Mask" type="CharacterBody3D" unique_id=1110605213]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_f250e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1434974329]
+mesh = SubResource("BoxMesh_bp1os")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1736122125]
+shape = SubResource("BoxShape3D_cq5j3")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1291103578]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2114547669]
+shape = SubResource("BoxShape3D_b1y6m")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

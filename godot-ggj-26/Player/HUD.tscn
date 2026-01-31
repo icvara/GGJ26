@@ -11,18 +11,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 150
 
-[node name="Player_HUD" parent="HBoxContainer" unique_id=1009366728 instance=ExtResource("1_a1gsu")]
-layout_mode = 2
-
-[node name="Player_HUD2" parent="HBoxContainer" unique_id=788404761 instance=ExtResource("1_a1gsu")]
-layout_mode = 2
-
-[node name="Player_HUD3" parent="HBoxContainer" unique_id=2145007044 instance=ExtResource("1_a1gsu")]
-layout_mode = 2
-
-[node name="Player_HUD4" parent="HBoxContainer" unique_id=492906238 instance=ExtResource("1_a1gsu")]
-layout_mode = 2
-
 [node name="win_window" type="ColorRect" parent="." unique_id=2019775241]
 visible = false
 anchors_preset = 8
@@ -73,10 +61,10 @@ text = "GameOver"
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1848949955]
 modulate = Color(0.8584493, 0.0006043297, 0.8617433, 1)
-offset_left = 419.0
-offset_top = 592.0
-offset_right = 620.0
-offset_bottom = 638.0
+offset_left = 498.0
+offset_top = 30.0
+offset_right = 699.0
+offset_bottom = 76.0
 
 [node name="Label" type="Label" parent="ProgressBar" unique_id=1640871890]
 layout_mode = 1
@@ -87,3 +75,40 @@ offset_top = -26.0
 offset_right = 161.9
 offset_bottom = -3.0
 text = "Time Before the End"
+
+[node name="Player_HUD1" parent="." unique_id=1009366728 instance=ExtResource("1_a1gsu")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = -43.0
+offset_right = 70.0
+offset_bottom = -3.0
+grow_vertical = 0
+
+[node name="Player_HUD2" parent="." unique_id=788404761 instance=ExtResource("1_a1gsu")]
+visible = false
+offset_left = 150.0
+offset_right = 150.0
+offset_bottom = 40.0
+size_flags_horizontal = 0
+
+[node name="Player_HUD3" parent="." unique_id=2145007044 instance=ExtResource("1_a1gsu")]
+visible = false
+offset_left = 300.0
+offset_right = 300.0
+offset_bottom = 40.0
+
+[node name="Player_HUD4" parent="." unique_id=492906238 instance=ExtResource("1_a1gsu")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -55.0
+offset_right = -56.0
+offset_bottom = -15.0
+grow_horizontal = 0
+grow_vertical = 0
+left = true
