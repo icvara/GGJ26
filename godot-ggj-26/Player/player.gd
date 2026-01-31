@@ -9,6 +9,10 @@ var mask_timer_finished = true
 var head_pos = Vector3(0.,1.,0.)
 var item_collected = 0
 
+
+var item_hold = null
+var item_in_proximiy = []
+
 var isDead = false
 
 var current_HP = 100
@@ -100,6 +104,8 @@ func _physics_process(delta):
 		
 		if mask_equipped:
 				mask_equipped.global_position = global_position + head_pos
+		if item_hold:
+			item_hold.global_position = $Action_Area/MeshInstance3D.global_position 
 		move_and_slide()
 
 func Die():
@@ -116,9 +122,24 @@ func Die():
 
 	isDead = true
 
-func collect_item():
-	item_collected += 1
-	$DebugLabel.text = str(item_collected)
+func drop_item():
+	if item_hold:
+		item_hold.put_back_in_world()
+		item_hold = null
+
+func collect_item(item):
+	if item_hold != null:
+		drop_item()
+	item_hold = item
+	item_in_proximiy.erase(item)
+
+	item.set_as_transport()
+	item_hold.global_position = $Action_Area/MeshInstance3D.global_position +Vector3(0,1,0)
+
+	
+
+	#item_collected += 1
+	#$DebugLabel.text = str(item_collected)
 
 
 func put_on_mask(mask):
@@ -139,8 +160,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 				print(playerID)
 				print(body.playerID)
 		if body.is_in_group("item"):
-			collect_item()
-			body.queue_free()		
+			#collect_item(body.get_parent())
+			item_in_proximiy.append(body)
+			#body.queue_free()		
 
 func activate_brain():
 	pass
@@ -151,8 +173,31 @@ func DoAction():
 	await get_tree().create_timer(.2).timeout
 	$Action_Area.monitoring = false
 	$Action_Area.hide()
+	
+	if item_in_proximiy.size() == 0:
+		if item_hold:
+			drop_item()
+	else:
+		collect_item(get_closer(item_in_proximiy))
 
 func _on_action_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("players") and body != self:
 		if !body.isDead:
 			body.Die()
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body.is_in_group("item"):
+		if item_in_proximiy.has(body):
+			item_in_proximiy.erase(body)
+			
+			
+func get_closer(array):
+	var threshold = 10000
+	var closest : Node3D
+	for a in array:
+		if global_position.distance_to(a.global_position) < threshold:
+			threshold = global_position.distance_to(a.global_position)
+			closest = a
+	return closest
+		

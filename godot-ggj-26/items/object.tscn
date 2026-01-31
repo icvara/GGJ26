@@ -17,24 +17,22 @@ height = 1.0
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_8d01g"]
 radius = 0.82421875
 
-[node name="Object" type="Node3D" unique_id=1118360614]
-script = ExtResource("1_ol1fq")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=689042725 groups=["item"]]
+[node name="RigidBody3D" type="RigidBody3D" unique_id=689042725 groups=["item"]]
+collision_layer = 4
+collision_mask = 3
 mass = 100.0
 physics_material_override = SubResource("PhysicsMaterial_ol1fq")
 gravity_scale = 10.0
+script = ExtResource("1_ol1fq")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=2096220946]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2096220946]
 shape = SubResource("CylinderShape3D_ol1fq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=728517360]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=728517360]
 mesh = SubResource("CylinderMesh_ol1fq")
 skeleton = NodePath("../..")
 
-[node name="Area3D" type="Area3D" parent="RigidBody3D" unique_id=2042536513]
+[node name="Area3D" type="Area3D" parent="." unique_id=2042536513]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D" unique_id=1750662780]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1750662780]
 shape = SubResource("CylinderShape3D_8d01g")
-
-[connection signal="body_entered" from="RigidBody3D/Area3D" to="." method="_on_area_3d_body_entered"]

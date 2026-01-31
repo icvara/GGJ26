@@ -14,13 +14,14 @@ var count = 0
 var rotation_list = [90*3,90*4,90*2,90*1]
 func _enter_tree() -> void:
 	for i in [0,1]:
-		for j in [0,1]:
+			var j = 1
+		#for j in [0,1]:
 			 
 
-			var nr = rooms[0].instantiate()
+			var nr = rooms[i].instantiate()
 			nr.position = Vector3(i*room_size,0,j*room_size)
 			nr.get_node("Label3D").text = str(count)
-			nr.rotation.y =deg_to_rad(rotation_list[count])
+			#nr.rotation.y =deg_to_rad(rotation_list[count])
 			count += 1
 			add_child(nr)
 
@@ -37,5 +38,5 @@ func _process(delta: float) -> void:
 	
 func release_fog():
 	var rnd_1 = randi_range(0,1)
-	var rnd_j = randi_range(0,1)
+	var rnd_j = 1# randi_range(0,1)
 	$infection_fog.position = Vector3(rnd_1*room_size,-0.5,rnd_j*room_size)

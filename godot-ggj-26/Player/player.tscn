@@ -32,6 +32,8 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="Player" type="CharacterBody3D" unique_id=525935651 groups=["players"]]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_l8h54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1456121082]
@@ -41,6 +43,8 @@ shape = SubResource("CapsuleShape3D_hvfyp")
 mesh = SubResource("CapsuleMesh_4ntmi")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1622977870]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1003833894]
 shape = SubResource("CapsuleShape3D_l8h54")
@@ -73,4 +77,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9546015, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_4ntmi")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="Action_Area" to="." method="_on_action_area_body_entered"]
