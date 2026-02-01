@@ -5,6 +5,11 @@
 [ext_resource type="AudioStream" uid="uid://mwend2kl8t21" path="res://SFX/Random/Random_3.mp3" id="3_5dqd5"]
 [ext_resource type="AudioStream" uid="uid://bto3npelat4m1" path="res://Music/Ambient_01.wav" id="3_alsk8"]
 [ext_resource type="PackedScene" uid="uid://rkvufobolh1p" path="res://Menu/Personnage.tscn" id="4_alsk8"]
+[ext_resource type="Texture2D" uid="uid://bpelsfe50gywn" path="res://Menu UI/Menu BG/Menu UI background state 1.png" id="6_sdh0h"]
+[ext_resource type="Texture2D" uid="uid://ch2sivb48ad5w" path="res://Menu UI/Menu Buttons/Start Button/Start state 2.png" id="7_5gy4y"]
+[ext_resource type="Texture2D" uid="uid://78kxjjut0gf2" path="res://Menu UI/Menu Buttons/Start Button/Start state 3.png" id="8_4bxe3"]
+[ext_resource type="Texture2D" uid="uid://cboh1yrg5yo6a" path="res://Menu UI/Menu BG/Menu UI background 2.png" id="9_3h1h3"]
+[ext_resource type="Texture2D" uid="uid://c72nrti6vfyr5" path="res://Menu UI/Menu BG/Menu UI background state 3.png" id="10_67d3u"]
 
 [node name="LandingMenu" type="Node2D" unique_id=596205154]
 script = ExtResource("1_ehssh")
@@ -53,11 +58,11 @@ offset_left = 523.0
 offset_top = 310.0
 offset_right = 624.0
 offset_bottom = 490.0
+scale = Vector2(0.33, 0.33)
 
-[node name="Button_Tutorial" type="Button" parent="button_menu" unique_id=83998255]
+[node name="Button_Tutorial" type="Button" parent="button_menu" unique_id=1340908432]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Tutorial"
+text = "tutorial"
 
 [node name="Button_play" type="Button" parent="button_menu" unique_id=11313878]
 layout_mode = 2
@@ -112,6 +117,33 @@ autoplay = true
 [node name="personnage" parent="." unique_id=547957532 instance=ExtResource("4_alsk8")]
 visible = false
 
+[node name="MenuUiBackgroundState1" type="Sprite2D" parent="." unique_id=1221667067]
+visible = false
+position = Vector2(578.80005, 330.2)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("6_sdh0h")
+
+[node name="TextureButton" type="TextureButton" parent="MenuUiBackgroundState1" unique_id=1360418878]
+offset_left = -1396.3636
+offset_top = -988.4848
+offset_right = 1335.6364
+offset_bottom = 1059.5151
+texture_normal = ExtResource("7_5gy4y")
+texture_pressed = ExtResource("8_4bxe3")
+ignore_texture_size = true
+
+[node name="MenuUiBackground2" type="Sprite2D" parent="." unique_id=674640757]
+visible = false
+position = Vector2(578.80005, 330.2)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("9_3h1h3")
+
+[node name="MenuUiBackgroundState3" type="Sprite2D" parent="." unique_id=1867611509]
+visible = false
+position = Vector2(578.80005, 330.2)
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("10_67d3u")
+
 [connection signal="pressed" from="button_menu/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="button_menu/Button_play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="button_menu/Button_play2" to="." method="_on_button_play_2_pressed"]
@@ -120,3 +152,4 @@ visible = false
 [connection signal="pressed" from="button_menu/Button_settings" to="." method="_on_button_settings_pressed"]
 [connection signal="pressed" from="button_menu/Button_Credit" to="." method="_on_button_credit_pressed"]
 [connection signal="pressed" from="button_menu/Button_Quit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="MenuUiBackgroundState1/TextureButton" to="." method="_on_texture_button_pressed"]

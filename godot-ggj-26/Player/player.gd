@@ -38,6 +38,7 @@ var LONG_PRESS_TIME = 0.6
 signal maskchanged(ID, value)
 
 func _ready() -> void:
+	head_pos = $maskpos.position
 	current_HP = max_HP
 	$DebugLabel.text = str(current_HP)
 	$Label3D_playername.text = "Player" + str(playerID)
@@ -159,6 +160,8 @@ func _physics_process(delta):
 		if direction != Vector3(0,0,0):
 				$Action_Area.look_at($Action_Area.global_position + Vector3(direction.z,0,-direction.x),Vector3.UP)
 				$Area3D.look_at($Area3D.global_position + Vector3(direction.z,0,-direction.x),Vector3.UP)
+				#$Character.look_at($Character.global_position  + Vector3(direction.z,0,-direction.x),Vector3.UP)
+				$Character.rotation.y = atan2(direction.x, direction.z)
 		else:
 			current_speed = 0	
 		move_and_slide()
@@ -166,7 +169,7 @@ func _physics_process(delta):
 		if mask_equipped:
 				mask_equipped.global_position = global_position + head_pos
 				if direction != Vector3(0,0,0):
-					mask_equipped.look_at(mask_equipped.global_position + Vector3(direction.z,0,-direction.x),Vector3.UP)
+					mask_equipped.look_at(mask_equipped.global_position  + Vector3(direction.z,0,-direction.x),Vector3.UP)
 		if item_hold:
 			item_hold.global_position = $Action_Area/MeshInstance3D.global_position 
 
@@ -219,10 +222,12 @@ func remove_mask():
 	if mask_equipped:
 		if !item_hold:
 			$maskup.play()
+			mask_equipped.scale = Vector3(1,1,1)
 
 			item_hold = mask_equipped
 			mask_equipped = null
-	
+			maskchanged.emit(playerID,0)
+
 
 	#item_collected += 1
 	#$DebugLabel.text = str(item_collected)
@@ -238,7 +243,8 @@ func set_new_mask_value(value):
 
 func put_on_mask(mask):
 	mask_equipped = mask
-	mask.global_position = global_position + head_pos
+	mask_equipped.scale = Vector3(0.7,0.7,0.7)
+	mask.global_position =  $maskpos.global_position
 	'mask_timer_finished = false
 	await get_tree().create_timer(1.0).timeout
 	mask_timer_finished = true'

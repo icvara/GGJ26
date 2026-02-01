@@ -6,7 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://65rtgrnax6qc" path="res://Infection/infection.tscn" id="5_4srsv"]
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_f52ns"]
 [ext_resource type="AudioStream" uid="uid://blwc1w4o6855h" path="res://Music/Loop_01.wav" id="7_f52ns"]
-[ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="8_l5ukw"]
+[ext_resource type="AudioStream" uid="uid://dhydbh2drcd8e" path="res://Music/loop 1.wav" id="8_4srsv"]
+[ext_resource type="AudioStream" uid="uid://bj4hfn1u0na28" path="res://Music/loop 2.wav" id="9_mf81u"]
+[ext_resource type="PackedScene" uid="uid://bsrvhxnqe4rqx" path="res://Maps/ROOMS/enviroment_v_1.tscn" id="10_mf81u"]
+[ext_resource type="AudioStream" uid="uid://hygnsdjy11nk" path="res://Music/Character1.wav" id="11_aomqu"]
+[ext_resource type="AudioStream" uid="uid://sggq8nvmyyk7" path="res://Music/Character3.wav" id="12_jgkyn"]
 [ext_resource type="PackedScene" uid="uid://b30fv2kpgu24d" path="res://Maps/ROOMS/room_manager.tscn" id="12_krmtw"]
 
 [node name="Main_Game" type="Node3D" unique_id=898975577]
@@ -27,11 +31,28 @@ HUD = NodePath("../HUD")
 [node name="HUD" parent="." unique_id=1885462862 instance=ExtResource("5_f52ns")]
 
 [node name="Room_manager" parent="." unique_id=2113806601 instance=ExtResource("12_krmtw")]
+visible = false
 
 [node name="Loop01" type="AudioStreamPlayer" parent="." unique_id=1752228603]
 stream = ExtResource("7_f52ns")
 volume_db = -20.0
+
+[node name="Loop1" type="AudioStreamPlayer" parent="." unique_id=1726564137]
+stream = ExtResource("8_4srsv")
+volume_db = -10.0
+
+[node name="Loop2" type="AudioStreamPlayer" parent="." unique_id=1025424329]
+stream = ExtResource("9_mf81u")
+
+[node name="Enviroment_V1" parent="." unique_id=1001688634 instance=ExtResource("10_mf81u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6083508, 0, 14.402668)
+
+[node name="Character1" type="AudioStreamPlayer" parent="." unique_id=863102475]
+stream = ExtResource("11_aomqu")
+volume_db = -15.0
 autoplay = true
 
-[node name="Atmosphere" type="AudioStreamPlayer" parent="." unique_id=780338295]
-stream = ExtResource("8_l5ukw")
+[node name="Character3" type="AudioStreamPlayer" parent="." unique_id=1708451699]
+stream = ExtResource("12_jgkyn")
+volume_db = -15.0
+autoplay = true

@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://cwvogerwgo7kl"]
 
 [ext_resource type="Script" uid="uid://qt7x65p5vw0x" path="res://Player/player_hud.gd" id="1_4vgym"]
-[ext_resource type="Texture2D" uid="uid://mghfr0rlwhhj" path="res://Player/IMG_3337.png" id="2_tbd82"]
-[ext_resource type="Texture2D" uid="uid://doidxwahpqec1" path="res://Player/IMG_3338.png" id="3_45ydr"]
+[ext_resource type="Texture2D" uid="uid://cwtkw65uxyrl7" path="res://Character/Musician-1.png" id="4_425de"]
+[ext_resource type="Texture2D" uid="uid://p36msbsmqvda" path="res://Character/Musician-2.png" id="5_l0oe5"]
+[ext_resource type="Texture2D" uid="uid://bvl0esbli4h4r" path="res://Character/Oslo-1.png" id="6_h3qyo"]
+[ext_resource type="Texture2D" uid="uid://dt3g7816jp5qt" path="res://Character/Oslo-2.png" id="7_dqavc"]
+[ext_resource type="Texture2D" uid="uid://dg6ho75l1j446" path="res://Character/Ada-1.png" id="8_d8gpi"]
+[ext_resource type="Texture2D" uid="uid://clhyjsjujhrvr" path="res://Character/Ada-2.png" id="9_i5f0o"]
+[ext_resource type="Texture2D" uid="uid://r0u115f8hamb" path="res://Character/Capricorn -1.png" id="10_jhhx2"]
+[ext_resource type="Texture2D" uid="uid://cb85243dmb8wg" path="res://Character/Capricorn -2.png" id="11_uup3l"]
 
 [node name="Player_HUD" type="Control" unique_id=2083990029]
 layout_mode = 3
@@ -53,17 +59,62 @@ offset_bottom = 13.0
 
 [node name="picture" type="Control" parent="." unique_id=1027986447]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 52.0
+offset_top = -124.0
+offset_right = 92.0
+offset_bottom = -84.0
 
-[node name="0" type="Sprite2D" parent="picture" unique_id=1098513169]
+[node name="0" type="Sprite2D" parent="picture" unique_id=404222917]
 visible = false
-position = Vector2(-1.0000038, -12.999985)
+position = Vector2(-70, 155)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_tbd82")
+texture = ExtResource("4_425de")
 
-[node name="1" type="Sprite2D" parent="picture" unique_id=352762848]
+[node name="1" type="Sprite2D" parent="picture" unique_id=1772273095]
 visible = false
-position = Vector2(-1.9999998, -12)
+position = Vector2(35.60002, 141.4)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_45ydr")
+texture = ExtResource("6_h3qyo")
+
+[node name="2" type="Sprite2D" parent="picture" unique_id=524266851]
+visible = false
+position = Vector2(-126.39998, 154.4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_d8gpi")
+
+[node name="3" type="Sprite2D" parent="picture" unique_id=1771533618]
+visible = false
+position = Vector2(-18.999985, 115.99999)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_jhhx2")
+
+[node name="picture2" type="Control" parent="." unique_id=400950590]
+anchors_preset = 0
+offset_left = 52.0
+offset_top = -124.0
+offset_right = 92.0
+offset_bottom = -84.0
+
+[node name="0" type="Sprite2D" parent="picture2" unique_id=331018129]
+visible = false
+position = Vector2(-70, 155)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_l0oe5")
+
+[node name="1" type="Sprite2D" parent="picture2" unique_id=627820965]
+visible = false
+position = Vector2(35.60002, 141.4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_dqavc")
+
+[node name="2" type="Sprite2D" parent="picture2" unique_id=1815743169]
+visible = false
+position = Vector2(-126.39998, 154.4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_i5f0o")
+
+[node name="3" type="Sprite2D" parent="picture2" unique_id=770936107]
+visible = false
+position = Vector2(-18.999985, 115.99999)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_uup3l")

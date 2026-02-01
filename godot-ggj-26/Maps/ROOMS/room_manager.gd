@@ -13,7 +13,7 @@ var rooms_array = []
 
 var count = 0
 var rotation_list = [90*3,90*4,90*2,90*1]
-func _enter_tree() -> void:
+'func _enter_tree() -> void:
 	for i in [0,1]:
 			var j = 1
 		#for j in [0,1]:
@@ -25,13 +25,13 @@ func _enter_tree() -> void:
 			#nr.get_node("Label3D").text = str(count)
 			#nr.rotation.y =deg_to_rad(rotation_list[count])
 			count += 1
-			add_child(nr)
+			add_child(nr)'
 
 func _process(delta: float) -> void:
 	current_time += delta
 	if current_time >= next_fog:
 		var n = randi_range(0,1)
-		rooms_array[n].get_node("Fog").Activate() 
+		get_parent().get_node("Enviroment_V1").get_node(str(n)).get_node("Fog").Activate() 
 		current_time = 0
 		#release_fog2(n,delta)
 		next_fog = clamp(randf_range(25,35) - round_count,8,35)

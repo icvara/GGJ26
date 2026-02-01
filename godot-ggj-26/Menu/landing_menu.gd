@@ -40,3 +40,8 @@ func _on_button_play_2_pressed() -> void:
 
 func _on_button_tutorial_pressed() -> void:
 	get_tree().change_scene_to_file("res://Menu/tuto.tscn")
+
+
+func _on_texture_button_pressed() -> void:
+	$MenuUiBackgroundState1.hide()
+	$MenuUiBackground2.show()

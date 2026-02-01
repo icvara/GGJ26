@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bf8bgnbab0mad"]
 
 [ext_resource type="Script" uid="uid://dn36gyjpn3msx" path="res://station/Transform_station/sta_00.gd" id="1_t3rbc"]
-[ext_resource type="AudioStream" uid="uid://7rkb4wtoxmkv" path="res://SFX/Random/Random_1.mp3" id="3_iv3kk"]
+[ext_resource type="AudioStream" uid="uid://c3jhrxr8mix3d" path="res://SFX/In-game/mask sfx _ 3-03.wav" id="2_t3rbc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tx3ea"]
 albedo_color = Color(0.6164899, 0.553577, 0.5768299, 1)
@@ -27,5 +27,6 @@ shape = SubResource("ConcavePolygonShape3D_05utb")
 [node name="Item emplacement" type="Node3D" parent="." unique_id=1894577196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1144737, 1.727563, -1.8193837)
 
-[node name="Random1" type="AudioStreamPlayer" parent="." unique_id=1910938037]
-stream = ExtResource("3_iv3kk")
+[node name="Random1" type="AudioStreamPlayer" parent="." unique_id=2081338777]
+stream = ExtResource("2_t3rbc")
+volume_db = 15.0

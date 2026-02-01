@@ -18,6 +18,7 @@ func _ready() -> void:
 	$Player2.playerID = 3
 	$Player2.maskchanged.connect(HUD._on_mask_update)
 	$Player2.isSwitch = false
+	$Character3.volume_db = -80
 
 	HUD.get_node("ProgressBar").max_value = end_of_time
 	$CanvasLayer/Panel/Label.show()
@@ -86,6 +87,8 @@ func _process(delta: float) -> void:
 	if next == true and step ==5:
 			step += 1
 			next = false
+			$Character3.volume_db = 0
+
 			$CanvasLayer/Panel/Label.text = "Use Key Arrow to move your friends and Shift to interact\n Or press Q or E to change control"
 	if next == true and step == 6:
 			step += 1

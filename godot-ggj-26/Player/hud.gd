@@ -15,7 +15,7 @@ func update_time(value):
 
 
 func _on_mask_update(playerID, value):
-	get_node("Player_HUD" +str(playerID+1)).update_progressbar(value)
+	get_node("Player_HUD" +str(playerID+1)).update_progressbar(playerID,value)
 
 
 
@@ -37,7 +37,7 @@ func _on_max_storage():
 	#$win_window.show()
 
 func _on_death(id):
-	get_parent().get_node("Loop01").stop()
+	get_parent().get_node("Loop1").stop()
 	await get_tree().create_timer(2).timeout
 	$Lose.play()
 	$gameover_window.show()

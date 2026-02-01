@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cwvogerwgo7kl" path="res://Player/player_hud.tscn" id="1_a1gsu"]
 [ext_resource type="Script" uid="uid://du6gf4csqr6db" path="res://Player/hud.gd" id="1_jrba6"]
 [ext_resource type="AudioStream" uid="uid://co55wy1oy8nw2" path="res://Music/lose.wav" id="3_11qr4"]
+[ext_resource type="Texture2D" uid="uid://dg6ho75l1j446" path="res://Character/Ada-1.png" id="4_051bf"]
+[ext_resource type="Texture2D" uid="uid://cwtkw65uxyrl7" path="res://Character/Musician-1.png" id="5_lwd00"]
 
 [node name="HUD" type="CanvasLayer" unique_id=2128050032]
 script = ExtResource("1_jrba6")
@@ -146,6 +148,16 @@ text = "Mask Built: 0"
 
 [node name="Lose" type="AudioStreamPlayer" parent="." unique_id=1133769088]
 stream = ExtResource("3_11qr4")
+
+[node name="Ada1" type="Sprite2D" parent="." unique_id=314376450]
+position = Vector2(-105, 721)
+scale = Vector2(0.26757813, 0.26757813)
+texture = ExtResource("4_051bf")
+
+[node name="Musician1" type="Sprite2D" parent="." unique_id=1097472714]
+position = Vector2(955, 884)
+scale = Vector2(0.48242188, 0.48242188)
+texture = ExtResource("5_lwd00")
 
 [connection signal="pressed" from="gameover_window/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="gameover_window/Button3" to="." method="_on_button_3_pressed"]

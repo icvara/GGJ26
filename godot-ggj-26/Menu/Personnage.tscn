@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://rkvufobolh1p"]
 
 [ext_resource type="Script" uid="uid://dubd4xbb1uqsj" path="res://Menu/personnage.gd" id="1_bfogk"]
-[ext_resource type="Texture2D" uid="uid://cb4j02g5gihcr" path="res://IMG_3313.jpg" id="1_lhjcd"]
 [ext_resource type="AudioStream" uid="uid://mwend2kl8t21" path="res://SFX/Random/Random_3.mp3" id="3_c834w"]
+[ext_resource type="Texture2D" uid="uid://dg6ho75l1j446" path="res://Character/Ada-1.png" id="3_sei8m"]
+[ext_resource type="Texture2D" uid="uid://r0u115f8hamb" path="res://Character/Capricorn -1.png" id="4_rt43s"]
+[ext_resource type="Texture2D" uid="uid://cwtkw65uxyrl7" path="res://Character/Musician-1.png" id="5_cxq2j"]
+[ext_resource type="Texture2D" uid="uid://bvl0esbli4h4r" path="res://Character/Oslo-1.png" id="6_xokni"]
 
 [node name="personnage" type="Control" unique_id=547957532]
 layout_mode = 3
@@ -18,11 +21,6 @@ layout_mode = 0
 offset_right = 1172.0
 offset_bottom = 676.0
 color = Color(0.5449743, 0.54497427, 0.54497427, 1)
-
-[node name="Img3313" type="Sprite2D" parent="." unique_id=2016813792]
-position = Vector2(291, 281)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_lhjcd")
 
 [node name="Label" type="Label" parent="." unique_id=883982187]
 layout_mode = 0
@@ -51,5 +49,25 @@ text = "Back"
 
 [node name="Random3" type="AudioStreamPlayer" parent="." unique_id=473869746]
 stream = ExtResource("3_c834w")
+
+[node name="Ada1" type="Sprite2D" parent="." unique_id=93368724]
+position = Vector2(291.2, 336.8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_sei8m")
+
+[node name="Capricorn1" type="Sprite2D" parent="." unique_id=1442626222]
+position = Vector2(291.2, 336.8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_rt43s")
+
+[node name="Musician1" type="Sprite2D" parent="." unique_id=1851281779]
+position = Vector2(291.2, 336.8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_cxq2j")
+
+[node name="Oslo1" type="Sprite2D" parent="." unique_id=891250501]
+position = Vector2(291.2, 336.8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_xokni")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
