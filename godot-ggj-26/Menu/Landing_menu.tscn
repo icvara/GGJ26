@@ -24,10 +24,6 @@ stream = ExtResource("3_5dqd5")
 stream = ExtResource("3_alsk8")
 autoplay = true
 
-[node name="personnage" parent="." unique_id=547957532 instance=ExtResource("4_alsk8")]
-visible = false
-mouse_filter = 1
-
 [node name="Img3357" type="Sprite2D" parent="." unique_id=562742462]
 position = Vector2(571, 304)
 scale = Vector2(0.30652273, 0.30652273)
@@ -64,6 +60,10 @@ layout_mode = 2
 texture_normal = ExtResource("16_qlxa2")
 texture_pressed = ExtResource("16_qlxa2")
 texture_hover = ExtResource("10_sdh0h")
+
+[node name="personnage" parent="." unique_id=547957532 instance=ExtResource("4_alsk8")]
+visible = false
+mouse_filter = 1
 
 [connection signal="pressed" from="Img3357/button_menu/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="Img3357/button_menu/Button_play" to="." method="_on_button_play_pressed"]
