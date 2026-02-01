@@ -14,8 +14,10 @@ var end_of_time = 50
 func _ready() -> void:
 	$Player.playerID = 0
 	$Player.maskchanged.connect(HUD._on_mask_update)
+	$Player.isSwitch = false
 	$Player2.playerID = 3
 	$Player2.maskchanged.connect(HUD._on_mask_update)
+	$Player2.isSwitch = false
 
 	HUD.get_node("ProgressBar").max_value = end_of_time
 	$CanvasLayer/Panel/Label.show()
@@ -74,9 +76,13 @@ func _process(delta: float) -> void:
 			step +=1
 
 			$CanvasLayer/Panel/Label.text = "You will need some help for the next step!"
+			$Transition1.play()
 			$RoomB.show()
 			$RoomA/Transfer.isActive = true
 			$Player2.show()
+			$Player.isSwitch = true
+			$Player2.isSwitch = true
+
 	if next == true and step ==5:
 			step += 1
 			next = false
@@ -88,6 +94,7 @@ func _process(delta: float) -> void:
 			next = false
 
 	if GlobalParameter.maskcount > 0 and step == 7:
+		$Win.play()
 		$CanvasLayer/Panel/Label.text = "Congratulations!"
 		$CanvasLayer/Panel/Label3.show()
 

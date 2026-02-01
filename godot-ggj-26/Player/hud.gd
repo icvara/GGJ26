@@ -6,6 +6,7 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	$"Player_HUD1/picture/0".show()
+	
 	$"Player_HUD4/picture/1".show()
 
 
@@ -38,7 +39,7 @@ func _on_max_storage():
 func _on_death(id):
 	get_parent().get_node("Loop01").stop()
 	await get_tree().create_timer(2).timeout
-	$MaskLost.play()
+	$Lose.play()
 	$gameover_window.show()
 
 

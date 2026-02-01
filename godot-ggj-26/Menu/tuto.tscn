@@ -3,12 +3,19 @@
 [ext_resource type="Script" uid="uid://wb10a610lkir" path="res://Menu/tuto.gd" id="1_4hj0e"]
 [ext_resource type="PackedScene" uid="uid://dlnutrnpmm4yr" path="res://Maps/ROOMS/room_tuto.tscn" id="1_rhy0d"]
 [ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="2_dg1xy"]
+[ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="2_wj2he"]
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_jyhwc"]
 [ext_resource type="PackedScene" uid="uid://cmux2iw5o47yi" path="res://Maps/ROOMS/room_tutob.tscn" id="5_qw3cy"]
+[ext_resource type="AudioStream" uid="uid://dc5vrnrfmn1c2" path="res://Music/win.wav" id="6_s0l4y"]
+[ext_resource type="AudioStream" uid="uid://b501p1lbvs8ol" path="res://Music/transition1.wav" id="7_wj2he"]
 
 [node name="Tuto" type="Node3D" unique_id=1151452126 node_paths=PackedStringArray("HUD")]
 script = ExtResource("1_4hj0e")
 HUD = NodePath("HUD")
+
+[node name="Atmosphere" type="AudioStreamPlayer" parent="." unique_id=83215694]
+stream = ExtResource("2_wj2he")
+autoplay = true
 
 [node name="RoomA" parent="." unique_id=1242634349 instance=ExtResource("1_rhy0d")]
 
@@ -75,3 +82,9 @@ visible = false
 [node name="RoomB" parent="." unique_id=1341964108 instance=ExtResource("5_qw3cy")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14.530078, 0, 0)
 visible = false
+
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=1750085595]
+stream = ExtResource("6_s0l4y")
+
+[node name="Transition1" type="AudioStreamPlayer" parent="." unique_id=77985148]
+stream = ExtResource("7_wj2he")

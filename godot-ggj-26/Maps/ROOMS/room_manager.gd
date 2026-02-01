@@ -8,6 +8,7 @@ var next_fog = 15.0
 var fog_activation_time = 5.0
 var current_fog_activation_time = 0.0
 
+var round_count = 0
 var rooms_array = []
 
 var count = 0
@@ -33,7 +34,8 @@ func _process(delta: float) -> void:
 		rooms_array[n].get_node("Fog").Activate() 
 		current_time = 0
 		#release_fog2(n,delta)
-		next_fog = randf_range(25,35)
+		next_fog = clamp(randf_range(25,35) - round_count,8,35)
+		round_count += 4
 
 		#current_fog_activation_time += delta
 		#$infection_fog.position.y = clamp($infection_fog.position.y+ 0.05,-0.5,1)

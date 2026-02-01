@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://65rtgrnax6qc" path="res://Infection/infection.tscn" id="5_4srsv"]
 [ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_f52ns"]
 [ext_resource type="AudioStream" uid="uid://blwc1w4o6855h" path="res://Music/Loop_01.wav" id="7_f52ns"]
+[ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="8_l5ukw"]
 [ext_resource type="PackedScene" uid="uid://b30fv2kpgu24d" path="res://Maps/ROOMS/room_manager.tscn" id="12_krmtw"]
 
 [node name="Main_Game" type="Node3D" unique_id=898975577]
@@ -31,3 +32,6 @@ HUD = NodePath("../HUD")
 stream = ExtResource("7_f52ns")
 volume_db = -20.0
 autoplay = true
+
+[node name="Atmosphere" type="AudioStreamPlayer" parent="." unique_id=780338295]
+stream = ExtResource("8_l5ukw")

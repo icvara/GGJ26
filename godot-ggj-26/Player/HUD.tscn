@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cwvogerwgo7kl" path="res://Player/player_hud.tscn" id="1_a1gsu"]
 [ext_resource type="Script" uid="uid://du6gf4csqr6db" path="res://Player/hud.gd" id="1_jrba6"]
-[ext_resource type="AudioStream" uid="uid://fq6s1a1tg141" path="res://SFX/In-game/Mask_lost.mp3" id="3_11qr4"]
+[ext_resource type="AudioStream" uid="uid://co55wy1oy8nw2" path="res://Music/lose.wav" id="3_11qr4"]
 
 [node name="HUD" type="CanvasLayer" unique_id=2128050032]
 script = ExtResource("1_jrba6")
@@ -133,10 +133,6 @@ grow_horizontal = 0
 grow_vertical = 0
 left = true
 
-[node name="MaskLost" type="AudioStreamPlayer" parent="." unique_id=804326222]
-stream = ExtResource("3_11qr4")
-volume_db = 10.0
-
 [node name="Label" type="Label" parent="." unique_id=1298726643]
 anchors_preset = 5
 anchor_left = 0.5
@@ -147,6 +143,9 @@ offset_bottom = 23.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 60
 text = "Mask Built: 0"
+
+[node name="Lose" type="AudioStreamPlayer" parent="." unique_id=1133769088]
+stream = ExtResource("3_11qr4")
 
 [connection signal="pressed" from="gameover_window/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="gameover_window/Button3" to="." method="_on_button_3_pressed"]

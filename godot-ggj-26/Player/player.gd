@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var gravity: float = 100.0
 @export var playerID = 0
 var playerIDctrl = 0
-
+var isSwitch = true
 var mask_equipped = null
 var mask_timer_finished = true
 
@@ -91,17 +91,17 @@ func _physics_process(delta):
 			DoAction()
 		
 		#KEYBOARD
-
-		if Input.is_action_just_pressed("changeCtrl_L"):
-			if playerIDctrl == 0:
-				playerIDctrl = 3 
-			elif playerIDctrl == 3:
-				playerIDctrl =0
-		if Input.is_action_just_pressed("changeCTRL_R"):
-			if playerIDctrl == 0:
-				playerIDctrl = 3 
-			elif playerIDctrl == 3:
-				playerIDctrl =0
+		if isSwitch:
+			if Input.is_action_just_pressed("changeCtrl_L"):
+				if playerIDctrl == 0:
+					playerIDctrl = 3 
+				elif playerIDctrl == 3:
+					playerIDctrl =0
+			if Input.is_action_just_pressed("changeCTRL_R"):
+				if playerIDctrl == 0:
+					playerIDctrl = 3 
+				elif playerIDctrl == 3:
+					playerIDctrl =0
 		if Input.is_action_pressed("D"+str(playerIDctrl)):
 			direction.z = 1
 		if Input.is_action_pressed("U"+str(playerIDctrl)):
