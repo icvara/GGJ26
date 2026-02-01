@@ -59,7 +59,26 @@ offset_bottom = 183.0
 theme_override_font_sizes/font_size = 50
 text = "GameOver"
 
+[node name="Button" type="Button" parent="gameover_window" unique_id=260586075]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 205.0
+offset_right = 227.0
+offset_bottom = 268.0
+theme_override_font_sizes/font_size = 40
+text = "RESTART"
+
+[node name="Button3" type="Button" parent="gameover_window" unique_id=1955971707]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 203.0
+offset_right = 696.0
+offset_bottom = 266.0
+theme_override_font_sizes/font_size = 40
+text = "MENU"
+
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1848949955]
+visible = false
 modulate = Color(0.8584493, 0.0006043297, 0.8617433, 1)
 offset_left = 498.0
 offset_top = 30.0
@@ -112,3 +131,6 @@ offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
 left = true
+
+[connection signal="pressed" from="gameover_window/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="gameover_window/Button3" to="." method="_on_button_3_pressed"]

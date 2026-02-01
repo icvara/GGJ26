@@ -51,6 +51,7 @@ theme_override_font_sizes/font_size = 24
 text = "Play Local"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="button_menu" unique_id=831827337]
+visible = false
 layout_mode = 2
 
 [node name="Button_playclient" type="Button" parent="button_menu/HBoxContainer" unique_id=1755663735]
@@ -66,11 +67,13 @@ disabled = true
 text = "Host "
 
 [node name="Button_settings" type="Button" parent="button_menu" unique_id=61408850]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Settings"
 
 [node name="Button_Credit" type="Button" parent="button_menu" unique_id=1078870074]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Credit"

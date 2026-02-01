@@ -41,12 +41,14 @@ debug_color = Color(0.86141115, 0.3306814, 0.38880095, 0.41960785)
 
 [node name="DebugLabel" type="Label3D" parent="." unique_id=1303395951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.109378, 0)
+visible = false
 billboard = 1
 text = "100"
 font_size = 128
 
 [node name="Label3D_playername" type="Label3D" parent="." unique_id=1996485394]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4318974, 0)
+visible = false
 billboard = 1
 text = "Yes"
 font_size = 108

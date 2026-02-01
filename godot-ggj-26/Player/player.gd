@@ -168,12 +168,12 @@ func _physics_process(delta):
 func Die():
 	player_has_died.emit(playerID)
 	rotate_z(deg_to_rad(90))
-	if has_node("infection"):
+	'if has_node("infection"):
 		$DebugLabel.text = str("was INFECTED")
 	else:
 		$DebugLabel.text = str("NOT INFECTED")
 	$DebugLabel.rotate_z(deg_to_rad(-90))
-	$DebugLabel.position = Vector3(0,2.1,-3)
+	$DebugLabel.position = Vector3(0,2.1,-3)'
 
 	$Label3D_playername.hide()
 

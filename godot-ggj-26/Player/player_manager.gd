@@ -56,7 +56,9 @@ func invoke_player(ID,pos):
 		newplayer.position = pos
 		newplayer.name = str(multiplayer.get_unique_id())
 		newplayer.playerID = ID
-		newplayer.player_has_died.connect(_on_player_death)
+		#newplayer.player_has_died.connect(_on_player_death)
+		newplayer.player_has_died.connect(HUD._on_death)
+
 		newplayer.maskchanged.connect(HUD._on_mask_update)
 		add_child(newplayer)
 		#infect_player_manager(newplayer)
