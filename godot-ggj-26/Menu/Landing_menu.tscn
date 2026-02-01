@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bew08i2kgmfrd"]
 
 [ext_resource type="Script" uid="uid://7fwy5n4lo1ki" path="res://Menu/landing_menu.gd" id="1_ehssh"]
+[ext_resource type="Texture2D" uid="uid://bdwqh23qhaybv" path="res://image.png" id="2_1mhci"]
 [ext_resource type="AudioStream" uid="uid://mwend2kl8t21" path="res://SFX/Random/Random_3.mp3" id="3_5dqd5"]
 [ext_resource type="AudioStream" uid="uid://bto3npelat4m1" path="res://Music/Ambient_01.wav" id="3_alsk8"]
 [ext_resource type="PackedScene" uid="uid://rkvufobolh1p" path="res://Menu/Personnage.tscn" id="4_alsk8"]
@@ -15,13 +16,18 @@ offset_right = 1102.0
 offset_bottom = 591.0
 color = Color(0.17898095, 0.25193712, 0.42623737, 1)
 
+[node name="Image" type="Sprite2D" parent="ColorRect" unique_id=882721818]
+position = Vector2(564, 267)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_1mhci")
+
 [node name="Label" type="Label" parent="." unique_id=861020078]
 offset_left = 85.0
 offset_top = 92.0
 offset_right = 1062.0
 offset_bottom = 151.0
-theme_override_font_sizes/font_size = 40
-text = "Amazing Game with mask on Post-Apocalyptic thing"
+theme_override_font_sizes/font_size = 50
+text = "Quasar Quantum Quaternion Qrew (Q4)"
 
 [node name="Label2" type="Label" parent="." unique_id=527370003]
 offset_left = 101.0
@@ -29,10 +35,11 @@ offset_top = 174.0
 offset_right = 1025.0
 offset_bottom = 245.0
 theme_override_font_sizes/font_size = 24
-text = "This is the Prototype. Nothing is fix, everything can change. don't let your mind be trapped"
+text = "Global Game Jam 2026 - London, Goldsmith"
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="." unique_id=1234124485]
+visible = false
 offset_left = 83.0
 offset_top = 317.0
 offset_right = 498.0

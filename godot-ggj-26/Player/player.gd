@@ -274,7 +274,6 @@ func DoAction():
 	if holding == false:
 		if station_in_proximity.size() > 0:
 			var station = get_closer(station_in_proximity)
-			
 			if item_hold:
 				put_item_station(station)
 			else:
@@ -315,6 +314,9 @@ func remove_item_from_station(station):
 		print("transfer")
 	elif station.name =="B":
 		print("transfer")
+	elif station.name == "00":
+		station.remove_item_in()
+
 	else:
 		if station.item_in :
 			item_hold = station.item_in

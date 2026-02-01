@@ -31,6 +31,7 @@ func put_item_in(item):
 			doTransfoStuff()
 
 func remove_item_in():
+	print("still here")
 	if item_in:
 		#item_in.set_collision_layer_value(3,true)
 		item_in = null
