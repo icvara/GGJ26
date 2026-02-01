@@ -36,3 +36,7 @@ func _on_button_host_pressed() -> void:
 func _on_button_play_2_pressed() -> void:
 	$Random3.play()
 	$personnage.show()
+
+
+func _on_button_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res://Menu/tuto.tscn")

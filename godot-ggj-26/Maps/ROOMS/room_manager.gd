@@ -4,7 +4,7 @@ extends Node3D
 var room_size = 14
 
 var current_time =0
-var next_fog = 5.0
+var next_fog = 15.0
 var fog_activation_time = 5.0
 var current_fog_activation_time = 0.0
 
@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		rooms_array[n].get_node("Fog").Activate() 
 		current_time = 0
 		#release_fog2(n,delta)
-		next_fog = randf_range(15,20)
+		next_fog = randf_range(25,35)
 
 		#current_fog_activation_time += delta
 		#$infection_fog.position.y = clamp($infection_fog.position.y+ 0.05,-0.5,1)

@@ -3,6 +3,12 @@ extends CanvasLayer
 func _process(delta: float) -> void:
 	$Label.text = "Mask built: " + str(GlobalParameter.maskcount)
 
+
+func _ready() -> void:
+	$"Player_HUD1/picture/0".show()
+	$"Player_HUD4/picture/1".show()
+
+
 func update_time(value):
 	$ProgressBar.value = value
 

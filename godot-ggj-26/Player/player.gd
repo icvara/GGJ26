@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var gravity: float = 100.0
-var playerID = 0
+@export var playerID = 0
 var playerIDctrl = 0
 
 var mask_equipped = null
@@ -229,6 +229,7 @@ func remove_mask():
 
 
 func set_new_mask_value(value):
+	print("here")
 	mask_equipped.value =  value
 	maskchanged.emit(playerID,value)
 

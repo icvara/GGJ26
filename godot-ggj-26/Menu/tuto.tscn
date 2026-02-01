@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://u8ktume05rve"]
+
+[ext_resource type="Script" uid="uid://wb10a610lkir" path="res://Menu/tuto.gd" id="1_4hj0e"]
+[ext_resource type="PackedScene" uid="uid://dlnutrnpmm4yr" path="res://Maps/ROOMS/room_tuto.tscn" id="1_rhy0d"]
+[ext_resource type="PackedScene" uid="uid://db776obwvfsan" path="res://Player/player.tscn" id="2_dg1xy"]
+[ext_resource type="PackedScene" uid="uid://btoc3r2cul1s5" path="res://Player/HUD.tscn" id="5_jyhwc"]
+[ext_resource type="PackedScene" uid="uid://cmux2iw5o47yi" path="res://Maps/ROOMS/room_tutob.tscn" id="5_qw3cy"]
+
+[node name="Tuto" type="Node3D" unique_id=1151452126 node_paths=PackedStringArray("HUD")]
+script = ExtResource("1_4hj0e")
+HUD = NodePath("HUD")
+
+[node name="RoomA" parent="." unique_id=1242634349 instance=ExtResource("1_rhy0d")]
+
+[node name="Player" parent="." unique_id=525935651 instance=ExtResource("2_dg1xy")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 1.3156184, 0)
+
+[node name="Player2" parent="." unique_id=342417211 instance=ExtResource("2_dg1xy")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 14.697378, 1.3156184, 0)
+visible = false
+playerID = 3
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=912252310]
+transform = Transform3D(1, 0, 0, 0, 0.5981847, 0.8013582, 0, -0.8013582, 0.5981847, 7, 14.407072, 9.983728)
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=227341934]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1506316630]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -577.0
+offset_top = -211.0
+offset_right = 576.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=378761972]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 1117.0
+offset_bottom = 71.0
+text = "Hello there, First of all grab the Gaz Mask!  Press SPACE to pick it up
+W,A,S,D to move around"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel" unique_id=782816567]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hello there, First of all grab the Gaz Mask!  Press SPACE to pick it up
+W,A,S,D to move around"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Panel" unique_id=1941388499]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.20500001
+offset_left = 593.0
+offset_top = 81.0
+offset_right = 699.645
+offset_bottom = 81.04
+text = "[Enter to Continue]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=617492801]
+
+[node name="HUD" parent="." unique_id=2128050032 instance=ExtResource("5_jyhwc")]
+visible = false
+
+[node name="RoomB" parent="." unique_id=1341964108 instance=ExtResource("5_qw3cy")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14.530078, 0, 0)
+visible = false

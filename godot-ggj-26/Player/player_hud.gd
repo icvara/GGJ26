@@ -13,6 +13,10 @@ func update_progressbar(value):
 	$ProgressBar.value = value
 	$ProgressBar2.value = value
 
+func update_picture(id):
+	$picture.get_node(str(id)).show()
+	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

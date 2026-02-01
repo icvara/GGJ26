@@ -54,6 +54,11 @@ offset_top = 310.0
 offset_right = 624.0
 offset_bottom = 490.0
 
+[node name="Button_Tutorial" type="Button" parent="button_menu" unique_id=83998255]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Tutorial"
+
 [node name="Button_play" type="Button" parent="button_menu" unique_id=11313878]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
@@ -107,6 +112,7 @@ autoplay = true
 [node name="personnage" parent="." unique_id=547957532 instance=ExtResource("4_alsk8")]
 visible = false
 
+[connection signal="pressed" from="button_menu/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
 [connection signal="pressed" from="button_menu/Button_play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="button_menu/Button_play2" to="." method="_on_button_play_2_pressed"]
 [connection signal="pressed" from="button_menu/HBoxContainer/Button_playclient" to="." method="_on_button_playclient_pressed"]
