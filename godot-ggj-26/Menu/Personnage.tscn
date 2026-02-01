@@ -30,9 +30,9 @@ offset_right = 1132.0
 offset_bottom = 423.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
-text = "The game takes place in a not-too-distant future. 
+text = " The end is upon us! The Great Unifying Pandemic of Everything is coming any day now, and no one is prepared! Our plucky heroes, four mad scientists (Oslo, Hell-Bourg, Montreal, and Capricorn, who call themselves the 'Quasar Quantum Quaternion Qrew' - Q4) have banded together to oversee the creation of the cure to a cataclysmic pandemic which they have hypothesized... to.. uhm.. be a real thing? Don't look at them like that!
 
-By some twist of fate, Hell-Bourg, Montreal, Capricorn, and Oslo were brought together; and by twist of fate, I mean insane conspiracy theory and online trolling. Like the Beatles in the film Help, the four rented neighboring townhouses in Liverpool and demolished the interior walls, connecting them all together and installing a massive conversation pit, to the great distress of their landlord. Living in close proximity and making good use of the conversation pit led to the creation of Q4’s greatest theory yet: the Great Unifying Pandemic of Everything. Panicked, they immediately got to work on finding a cure for the oncoming onslaught of disease, but quickly realized this would be much easier with the assistance of the world’s brightest minds. For years the four scientists had been attending every conference from Reykjavik to Christchurch to try to get global support (and funding!) for their world-preserving solutions, but they were dismissed by every major funding organization and prestigious institution. And even some of the kinda junk institutions. It was time to take matters into their own hands…"
+Trapped in their laboratory simulating the upcoming assault of diseases and with only one rapidly deteriorating gas mask to share between them, the group must work together to continuously build new masks to avoid death by the infectious fog that could seep into their room at any moment. Luckily, the leak only affects one room at a time because of Montreal’s ingenious air vent locks- a paranoid precaution, they all said! Well who’s laughing now? Not Q4: this is not a laughing gas."
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=1805997527]

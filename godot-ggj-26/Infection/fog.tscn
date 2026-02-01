@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bu5wb2a17tei0"]
 
 [ext_resource type="Script" uid="uid://ct20jem3wl63y" path="res://Infection/fog.gd" id="1_oxuw5"]
-[ext_resource type="AudioStream" uid="uid://c12os6vd7pfiu" path="res://SFX/In-game/Countdown 1.mp3" id="2_510fk"]
+[ext_resource type="AudioStream" uid="uid://bewegq80ajv3u" path="res://Music/Countdown_New_01-03.wav" id="2_j5kd3"]
 [ext_resource type="AudioStream" uid="uid://djql2g1r47nqw" path="res://Music/Atmosphere.wav" id="3_j3vj6"]
 [ext_resource type="AudioStream" uid="uid://blwc1w4o6855h" path="res://Music/Loop_01.wav" id="4_j5kd3"]
 
@@ -30,7 +30,7 @@ collision_mask = 7
 shape = SubResource("ConcavePolygonShape3D_510fk")
 
 [node name="Countdown1" type="AudioStreamPlayer" parent="." unique_id=951132972]
-stream = ExtResource("2_510fk")
+stream = ExtResource("2_j5kd3")
 
 [node name="Atmosphere" type="AudioStreamPlayer" parent="." unique_id=489281828]
 stream = ExtResource("3_j3vj6")

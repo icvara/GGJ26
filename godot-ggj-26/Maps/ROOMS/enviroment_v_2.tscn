@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cisiu6oiidaqc"]
+
+[ext_resource type="PackedScene" uid="uid://bmxpel6xnkcwg" path="res://3D asset/Enviroment_V2.fbx" id="1_6dobg"]
+[ext_resource type="Texture2D" uid="uid://f03x1begg4l1" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Exit button/Exit button hover.png" id="2_ytry0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn1ud"]
+albedo_texture = ExtResource("2_ytry0")
+
+[node name="Enviroment_V2" unique_id=1389874806 instance=ExtResource("1_6dobg")]
+
+[node name="Enviroment" parent="." index="0" unique_id=1939674514]
+material_override = SubResource("StandardMaterial3D_xn1ud")

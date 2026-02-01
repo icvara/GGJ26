@@ -2,6 +2,7 @@ extends Node2D
 
 
 
+
 func _on_button_play_pressed() -> void:
 	$Random3.play()
 
@@ -24,7 +25,6 @@ func _on_button_quit_pressed() -> void:
 
 func _on_button_playclient_pressed() -> void:
 	$Random3.play()
-	
 	get_tree().change_scene_to_file("res://online/main_online.tscn")
 
 
@@ -45,3 +45,7 @@ func _on_button_tutorial_pressed() -> void:
 func _on_texture_button_pressed() -> void:
 	$MenuUiBackgroundState1.hide()
 	$MenuUiBackground2.show()
+
+
+func _on_button_pressed() -> void:
+	print("hhhh")

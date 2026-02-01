@@ -1,111 +1,21 @@
 [gd_scene format=3 uid="uid://bew08i2kgmfrd"]
 
 [ext_resource type="Script" uid="uid://7fwy5n4lo1ki" path="res://Menu/landing_menu.gd" id="1_ehssh"]
-[ext_resource type="Texture2D" uid="uid://bdwqh23qhaybv" path="res://image.png" id="2_1mhci"]
 [ext_resource type="AudioStream" uid="uid://mwend2kl8t21" path="res://SFX/Random/Random_3.mp3" id="3_5dqd5"]
+[ext_resource type="Texture2D" uid="uid://dn0mq3lqcwkic" path="res://Menu UI/IMG_3357.png" id="3_5gy4y"]
 [ext_resource type="AudioStream" uid="uid://bto3npelat4m1" path="res://Music/Ambient_01.wav" id="3_alsk8"]
 [ext_resource type="PackedScene" uid="uid://rkvufobolh1p" path="res://Menu/Personnage.tscn" id="4_alsk8"]
-[ext_resource type="Texture2D" uid="uid://bpelsfe50gywn" path="res://Menu UI/Menu BG/Menu UI background state 1.png" id="6_sdh0h"]
-[ext_resource type="Texture2D" uid="uid://ch2sivb48ad5w" path="res://Menu UI/Menu Buttons/Start Button/Start state 2.png" id="7_5gy4y"]
-[ext_resource type="Texture2D" uid="uid://78kxjjut0gf2" path="res://Menu UI/Menu Buttons/Start Button/Start state 3.png" id="8_4bxe3"]
-[ext_resource type="Texture2D" uid="uid://cboh1yrg5yo6a" path="res://Menu UI/Menu BG/Menu UI background 2.png" id="9_3h1h3"]
-[ext_resource type="Texture2D" uid="uid://c72nrti6vfyr5" path="res://Menu UI/Menu BG/Menu UI background state 3.png" id="10_67d3u"]
+[ext_resource type="Texture2D" uid="uid://cvd7tnflw4xeu" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Tutorial button/Tutorial button hover.png" id="10_5gy4y"]
+[ext_resource type="Texture2D" uid="uid://f03x1begg4l1" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Exit button/Exit button hover.png" id="10_sdh0h"]
+[ext_resource type="Texture2D" uid="uid://pnpnot0my5el" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Tutorial button/Tutorial button no hover.png" id="11_4bxe3"]
+[ext_resource type="Texture2D" uid="uid://chtlei8vgo51u" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Story button/Story button no hover.png" id="11_4gai6"]
+[ext_resource type="Texture2D" uid="uid://c7forvsf2v57n" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Local play button/Local play button hover.png" id="12_y42hc"]
+[ext_resource type="Texture2D" uid="uid://h03opsbh6wyl" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Local play button/Local play button no hover.png" id="13_0850j"]
+[ext_resource type="Texture2D" uid="uid://14u7bp3a5mg8" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Story button/Story button hover.png" id="14_bt5r8"]
+[ext_resource type="Texture2D" uid="uid://v8y5hlwe7o0e" path="res://Menu UI/Lets get gassed Menu UI 1156/Buttons/Exit button/Exit button no hover.png" id="16_qlxa2"]
 
 [node name="LandingMenu" type="Node2D" unique_id=596205154]
 script = ExtResource("1_ehssh")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1530340453]
-offset_left = 44.0
-offset_top = 25.0
-offset_right = 1102.0
-offset_bottom = 591.0
-color = Color(0.17898095, 0.25193712, 0.42623737, 1)
-
-[node name="Image" type="Sprite2D" parent="ColorRect" unique_id=882721818]
-position = Vector2(564, 267)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_1mhci")
-
-[node name="Label" type="Label" parent="." unique_id=861020078]
-offset_left = 85.0
-offset_top = 92.0
-offset_right = 1062.0
-offset_bottom = 151.0
-theme_override_font_sizes/font_size = 50
-text = "Quasar Quantum Quaternion Qrew (Q4)"
-
-[node name="Label2" type="Label" parent="." unique_id=527370003]
-offset_left = 101.0
-offset_top = 174.0
-offset_right = 1025.0
-offset_bottom = 245.0
-theme_override_font_sizes/font_size = 24
-text = "Global Game Jam 2026 - London, Goldsmith"
-autowrap_mode = 2
-
-[node name="Label3" type="Label" parent="." unique_id=1234124485]
-visible = false
-offset_left = 83.0
-offset_top = 317.0
-offset_right = 498.0
-offset_bottom = 462.0
-theme_override_font_sizes/font_size = 24
-text = "The Online is only here for playtesting. Currently can only host on my computer and one game at a time"
-autowrap_mode = 2
-
-[node name="button_menu" type="VBoxContainer" parent="." unique_id=1199064924]
-offset_left = 523.0
-offset_top = 310.0
-offset_right = 624.0
-offset_bottom = 490.0
-scale = Vector2(0.33, 0.33)
-
-[node name="Button_Tutorial" type="Button" parent="button_menu" unique_id=1340908432]
-layout_mode = 2
-text = "tutorial"
-
-[node name="Button_play" type="Button" parent="button_menu" unique_id=11313878]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Play Local"
-
-[node name="Button_play2" type="Button" parent="button_menu" unique_id=1875106998]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Story"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="button_menu" unique_id=831827337]
-visible = false
-layout_mode = 2
-
-[node name="Button_playclient" type="Button" parent="button_menu/HBoxContainer" unique_id=1755663735]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-disabled = true
-text = "Client"
-
-[node name="Button_host" type="Button" parent="button_menu/HBoxContainer" unique_id=789749291]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-disabled = true
-text = "Host "
-
-[node name="Button_settings" type="Button" parent="button_menu" unique_id=61408850]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Settings"
-
-[node name="Button_Credit" type="Button" parent="button_menu" unique_id=1078870074]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Credit"
-
-[node name="Button_Quit" type="Button" parent="button_menu" unique_id=487847278]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "Quit"
 
 [node name="Random3" type="AudioStreamPlayer" parent="." unique_id=1128947295]
 stream = ExtResource("3_5dqd5")
@@ -116,40 +26,46 @@ autoplay = true
 
 [node name="personnage" parent="." unique_id=547957532 instance=ExtResource("4_alsk8")]
 visible = false
+mouse_filter = 1
 
-[node name="MenuUiBackgroundState1" type="Sprite2D" parent="." unique_id=1221667067]
-visible = false
-position = Vector2(578.80005, 330.2)
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("6_sdh0h")
+[node name="Img3357" type="Sprite2D" parent="." unique_id=562742462]
+position = Vector2(571, 304)
+scale = Vector2(0.30652273, 0.30652273)
+texture = ExtResource("3_5gy4y")
 
-[node name="TextureButton" type="TextureButton" parent="MenuUiBackgroundState1" unique_id=1360418878]
-offset_left = -1396.3636
-offset_top = -988.4848
-offset_right = 1335.6364
-offset_bottom = 1059.5151
-texture_normal = ExtResource("7_5gy4y")
-texture_pressed = ExtResource("8_4bxe3")
-ignore_texture_size = true
+[node name="button_menu" type="VBoxContainer" parent="Img3357" unique_id=1199064924]
+modulate = Color(0.64377993, 0.9873875, 0.7521821, 1)
+offset_left = 884.1106
+offset_top = -329.5025
+offset_right = 1384.1106
+offset_bottom = 322.4975
+scale = Vector2(2, 2)
 
-[node name="MenuUiBackground2" type="Sprite2D" parent="." unique_id=674640757]
-visible = false
-position = Vector2(578.80005, 330.2)
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("9_3h1h3")
+[node name="Button_Tutorial" type="TextureButton" parent="Img3357/button_menu" unique_id=1092224704]
+layout_mode = 2
+texture_normal = ExtResource("11_4bxe3")
+texture_pressed = ExtResource("11_4bxe3")
+texture_hover = ExtResource("10_5gy4y")
 
-[node name="MenuUiBackgroundState3" type="Sprite2D" parent="." unique_id=1867611509]
-visible = false
-position = Vector2(578.80005, 330.2)
-scale = Vector2(0.33, 0.33)
-texture = ExtResource("10_67d3u")
+[node name="Button_play" type="TextureButton" parent="Img3357/button_menu" unique_id=249371013]
+layout_mode = 2
+texture_normal = ExtResource("13_0850j")
+texture_pressed = ExtResource("13_0850j")
+texture_hover = ExtResource("12_y42hc")
 
-[connection signal="pressed" from="button_menu/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
-[connection signal="pressed" from="button_menu/Button_play" to="." method="_on_button_play_pressed"]
-[connection signal="pressed" from="button_menu/Button_play2" to="." method="_on_button_play_2_pressed"]
-[connection signal="pressed" from="button_menu/HBoxContainer/Button_playclient" to="." method="_on_button_playclient_pressed"]
-[connection signal="pressed" from="button_menu/HBoxContainer/Button_host" to="." method="_on_button_host_pressed"]
-[connection signal="pressed" from="button_menu/Button_settings" to="." method="_on_button_settings_pressed"]
-[connection signal="pressed" from="button_menu/Button_Credit" to="." method="_on_button_credit_pressed"]
-[connection signal="pressed" from="button_menu/Button_Quit" to="." method="_on_button_quit_pressed"]
-[connection signal="pressed" from="MenuUiBackgroundState1/TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="Button_play2" type="TextureButton" parent="Img3357/button_menu" unique_id=355015092]
+layout_mode = 2
+texture_normal = ExtResource("11_4gai6")
+texture_pressed = ExtResource("11_4gai6")
+texture_hover = ExtResource("14_bt5r8")
+
+[node name="Button_Quit" type="TextureButton" parent="Img3357/button_menu" unique_id=1805340587]
+layout_mode = 2
+texture_normal = ExtResource("16_qlxa2")
+texture_pressed = ExtResource("16_qlxa2")
+texture_hover = ExtResource("10_sdh0h")
+
+[connection signal="pressed" from="Img3357/button_menu/Button_Tutorial" to="." method="_on_button_tutorial_pressed"]
+[connection signal="pressed" from="Img3357/button_menu/Button_play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="Img3357/button_menu/Button_play2" to="." method="_on_button_play_2_pressed"]
+[connection signal="pressed" from="Img3357/button_menu/Button_Quit" to="." method="_on_button_quit_pressed"]

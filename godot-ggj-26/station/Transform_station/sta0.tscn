@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://e0mym0k22jev" path="res://station/Transform_station/station_transform.gd" id="1_05utb"]
 [ext_resource type="PackedScene" uid="uid://cbjn8f4b2wpym" path="res://items/object_3.tscn" id="2_k13if"]
-[ext_resource type="AudioStream" uid="uid://7rkb4wtoxmkv" path="res://SFX/Random/Random_1.mp3" id="3_k13if"]
+[ext_resource type="AudioStream" uid="uid://c3jhrxr8mix3d" path="res://SFX/In-game/mask sfx _ 3-03.wav" id="3_k13if"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tx3ea"]
 albedo_color = Color(0.6725189, 0.56568855, 0.1612218, 1)
@@ -31,3 +31,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4638182, 1.1454659)
 
 [node name="Random1" type="AudioStreamPlayer" parent="." unique_id=1910938037]
 stream = ExtResource("3_k13if")
+volume_db = 10.0

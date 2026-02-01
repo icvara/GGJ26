@@ -14,11 +14,11 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Q4"
+config/name="lets_get_gassed"
 run/main_scene="uid://bew08i2kgmfrd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
-config/icon="res://icon.svg"
+config/icon="uid://batqa6gvc2qrr"
 
 [autoload]
 

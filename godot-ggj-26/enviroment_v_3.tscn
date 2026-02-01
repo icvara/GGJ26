@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://jxtyakyvk7sk"]
+
+[ext_resource type="PackedScene" uid="uid://ctecmghnlslg8" path="res://3D asset/Enviroment_V3.fbx" id="1_l6tu7"]
+
+[node name="Enviroment_V3" unique_id=1248240362 instance=ExtResource("1_l6tu7")]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dxsvx30we0u4g"]
+
+[ext_resource type="PackedScene" uid="uid://vf17y1a8ge4t" path="res://items/Pickup_V1.fbx" id="1_lybb0"]
+
+[node name="Pickup_V1" unique_id=1918931744 instance=ExtResource("1_lybb0")]

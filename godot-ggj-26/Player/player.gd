@@ -10,6 +10,7 @@ var mask_timer_finished = true
 var head_pos = Vector3(0.,1.,0.)
 var item_collected = 0
 
+var animationisplaying = false
 
 var item_hold = null
 var item_in_proximiy = []
@@ -24,7 +25,7 @@ var timer = 0
 
 signal player_has_died(id)
 
-var maxspeed = 15
+var maxspeed = 10
 var current_speed = 0
 var acceleration = 100
 @export var speed := 15.0
@@ -158,11 +159,17 @@ func _physics_process(delta):
 		
 		
 		if direction != Vector3(0,0,0):
+				if animationisplaying == false:
+					$AnimationPlayer.play("mixamo_com")
+					animationisplaying = true
+				
 				$Action_Area.look_at($Action_Area.global_position + Vector3(direction.z,0,-direction.x),Vector3.UP)
 				$Area3D.look_at($Area3D.global_position + Vector3(direction.z,0,-direction.x),Vector3.UP)
 				#$Character.look_at($Character.global_position  + Vector3(direction.z,0,-direction.x),Vector3.UP)
-				$Character.rotation.y = atan2(direction.x, direction.z)
+				$Skeleton3D.rotation.y = atan2(direction.x, direction.z)
 		else:
+			animationisplaying = false
+			$AnimationPlayer.stop()
 			current_speed = 0	
 		move_and_slide()
 
@@ -195,6 +202,7 @@ func drop_item():
 
 func collect_item(item):
 	$pickup.play()
+	$AnimationPlayer2.play("mixamo_com")
 	if item_hold != null:
 		drop_item()
 		
