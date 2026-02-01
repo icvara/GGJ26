@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://7fwy5n4lo1ki" path="res://Menu/landing_menu.gd" id="1_ehssh"]
 [ext_resource type="AudioStream" uid="uid://mwend2kl8t21" path="res://SFX/Random/Random_3.mp3" id="3_5dqd5"]
 [ext_resource type="AudioStream" uid="uid://bto3npelat4m1" path="res://Music/Ambient_01.wav" id="3_alsk8"]
+[ext_resource type="PackedScene" uid="uid://rkvufobolh1p" path="res://Menu/Personnage.tscn" id="4_alsk8"]
 
 [node name="LandingMenu" type="Node2D" unique_id=596205154]
 script = ExtResource("1_ehssh")
@@ -51,6 +52,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Play Local"
 
+[node name="Button_play2" type="Button" parent="button_menu" unique_id=1875106998]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Story"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="button_menu" unique_id=831827337]
 visible = false
 layout_mode = 2
@@ -91,7 +97,11 @@ stream = ExtResource("3_5dqd5")
 stream = ExtResource("3_alsk8")
 autoplay = true
 
+[node name="personnage" parent="." unique_id=547957532 instance=ExtResource("4_alsk8")]
+visible = false
+
 [connection signal="pressed" from="button_menu/Button_play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="button_menu/Button_play2" to="." method="_on_button_play_2_pressed"]
 [connection signal="pressed" from="button_menu/HBoxContainer/Button_playclient" to="." method="_on_button_playclient_pressed"]
 [connection signal="pressed" from="button_menu/HBoxContainer/Button_host" to="." method="_on_button_host_pressed"]
 [connection signal="pressed" from="button_menu/Button_settings" to="." method="_on_button_settings_pressed"]

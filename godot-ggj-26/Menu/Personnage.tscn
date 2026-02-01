@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://rkvufobolh1p"]
+
+[ext_resource type="Script" uid="uid://dubd4xbb1uqsj" path="res://Menu/personnage.gd" id="1_bfogk"]
+[ext_resource type="Texture2D" uid="uid://cb4j02g5gihcr" path="res://IMG_3313.jpg" id="1_lhjcd"]
+
+[node name="personnage" type="Control" unique_id=547957532]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bfogk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2130051856]
+layout_mode = 0
+offset_right = 1172.0
+offset_bottom = 676.0
+
+[node name="Img3313" type="Sprite2D" parent="." unique_id=2016813792]
+position = Vector2(291, 281)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_lhjcd")
+
+[node name="Label" type="Label" parent="." unique_id=883982187]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 126.0
+offset_right = 1132.0
+offset_bottom = 423.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "The game takes place in a not-too-distant future. 
+
+By some twist of fate, Hell-Bourg, Montreal, Capricorn, and Oslo were brought together; and by twist of fate, I mean insane conspiracy theory and online trolling. Like the Beatles in the film Help, the four rented neighboring townhouses in Liverpool and demolished the interior walls, connecting them all together and installing a massive conversation pit, to the great distress of their landlord. Living in close proximity and making good use of the conversation pit led to the creation of Q4’s greatest theory yet: the Great Unifying Pandemic of Everything. Panicked, they immediately got to work on finding a cure for the oncoming onslaught of disease, but quickly realized this would be much easier with the assistance of the world’s brightest minds. For years the four scientists had been attending every conference from Reykjavik to Christchurch to try to get global support (and funding!) for their world-preserving solutions, but they were dismissed by every major funding organization and prestigious institution. And even some of the kinda junk institutions. It was time to take matters into their own hands…"
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=1805997527]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.020000001
+anchor_bottom = 0.024
+offset_left = 841.0
+offset_top = 568.0
+offset_right = 899.96
+offset_bottom = 605.448
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

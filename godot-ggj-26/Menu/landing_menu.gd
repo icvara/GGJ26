@@ -31,3 +31,7 @@ func _on_button_playclient_pressed() -> void:
 func _on_button_host_pressed() -> void:
 	GlobalParameter.ishosting = true
 	get_tree().change_scene_to_file("res://online/main_online.tscn")
+
+
+func _on_button_play_2_pressed() -> void:
+	$personnage.show()

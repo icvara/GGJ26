@@ -85,6 +85,9 @@ func _physics_process(delta):
 			direction.z = 0
 
 		if Input.is_joy_button_pressed(playerID, 0):
+			'holding = false
+			long_pressed = false
+			hold_time = 0.0'
 			DoAction()
 		
 		#KEYBOARD
@@ -113,6 +116,8 @@ func _physics_process(delta):
 			long_pressed = false
 			hold_time = 0.0
 			DoAction()	
+		
+		 
 			
 		if Input.is_action_pressed("A"+str(playerIDctrl)) or  Input.is_joy_button_pressed(playerID, 0):
 			if  holding == false:

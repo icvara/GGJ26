@@ -23,7 +23,7 @@ func _ready() -> void:
 func dammage_players():
 	for p in players_in_rooms:
 		if p.mask_equipped: 
-			var newvalue = clamp(p.mask_equipped.value - 0.1,0,100)
+			var newvalue = clamp(p.mask_equipped.value - 0.2,0,100)
 			p.set_new_mask_value(newvalue)
 			if newvalue == 0:
 				if !p.isDead:
