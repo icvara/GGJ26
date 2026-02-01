@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dvoy053hipoy2" path="res://3D asset/RoomA.fbx" id="1_jtdoy"]
 [ext_resource type="PackedScene" uid="uid://cbjn8f4b2wpym" path="res://items/object_3.tscn" id="2_ltdvt"]
-[ext_resource type="PackedScene" uid="uid://bx27pyxxgogb0" path="res://items/object_0.tscn" id="3_j2yti"]
 [ext_resource type="PackedScene" uid="uid://7w0no55av3xe" path="res://station/Transform_station/sta1.tscn" id="4_ua7rf"]
 [ext_resource type="PackedScene" uid="uid://d0ysm38asimdi" path="res://station/Transform_station/sta2.tscn" id="5_dr34s"]
 [ext_resource type="PackedScene" uid="uid://dd3f3oxio20xd" path="res://items/object_MASK.tscn" id="7_0jjc0"]
@@ -37,16 +36,13 @@ shadow_enabled = true
 spot_range = 15.0
 spot_attenuation = -0.11
 
-[node name="item2" parent="." index="4" unique_id=85869091 instance=ExtResource("3_j2yti")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.377626, 1.9735374, -4.363243)
-
-[node name="Station_transform" parent="." index="5" unique_id=213299388 instance=ExtResource("4_ua7rf")]
+[node name="Station_transform" parent="." index="4" unique_id=213299388 instance=ExtResource("4_ua7rf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.946262, 1.8119669, -0.9989682)
 
-[node name="Station_transform2" parent="." index="6" unique_id=1220435856 instance=ExtResource("5_dr34s")]
+[node name="Station_transform2" parent="." index="5" unique_id=1220435856 instance=ExtResource("5_dr34s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4238763, 1.8216419, -2.9283814)
 
-[node name="Mask" parent="." index="7" unique_id=561575717 instance=ExtResource("7_0jjc0")]
+[node name="Mask" parent="." index="6" unique_id=561575717 instance=ExtResource("7_0jjc0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0486328e-07, 1.8721929, -3.4872293)
 
-[node name="Fog" parent="." index="8" unique_id=1740693733 instance=ExtResource("7_jtdoy")]
+[node name="Fog" parent="." index="7" unique_id=1740693733 instance=ExtResource("7_jtdoy")]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://e0mym0k22jev" path="res://station/Transform_station/station_transform.gd" id="1_tb7mr"]
 [ext_resource type="PackedScene" uid="uid://dd3f3oxio20xd" path="res://items/object_MASK.tscn" id="2_tb7mr"]
+[ext_resource type="AudioStream" uid="uid://b5sle65kgddw0" path="res://SFX/In-game/Mask_pickup.mp3" id="3_1qf4g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tx3ea"]
 albedo_color = Color(0.21568628, 0.6039216, 0.7137255, 1)
@@ -28,3 +29,6 @@ shape = SubResource("ConcavePolygonShape3D_tb7mr")
 
 [node name="Item emplacement" type="Node3D" parent="." unique_id=1894577196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4638182, -1.1613307)
+
+[node name="Random1" type="AudioStreamPlayer" parent="." unique_id=390433950]
+stream = ExtResource("3_1qf4g")

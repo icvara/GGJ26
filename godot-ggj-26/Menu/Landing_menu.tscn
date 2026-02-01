@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bew08i2kgmfrd"]
 
 [ext_resource type="Script" uid="uid://7fwy5n4lo1ki" path="res://Menu/landing_menu.gd" id="1_ehssh"]
-[ext_resource type="AudioStream" uid="uid://blwc1w4o6855h" path="res://Music/Loop_01.wav" id="2_ifrtk"]
+[ext_resource type="AudioStream" uid="uid://mwend2kl8t21" path="res://SFX/Random/Random_3.mp3" id="3_5dqd5"]
+[ext_resource type="AudioStream" uid="uid://bto3npelat4m1" path="res://Music/Ambient_01.wav" id="3_alsk8"]
 
 [node name="LandingMenu" type="Node2D" unique_id=596205154]
 script = ExtResource("1_ehssh")
@@ -83,9 +84,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Quit"
 
-[node name="Loop01" type="AudioStreamPlayer" parent="." unique_id=1775825807]
-stream = ExtResource("2_ifrtk")
-volume_db = -5.0
+[node name="Random3" type="AudioStreamPlayer" parent="." unique_id=1128947295]
+stream = ExtResource("3_5dqd5")
+
+[node name="Ambient01" type="AudioStreamPlayer" parent="." unique_id=924797660]
+stream = ExtResource("3_alsk8")
 autoplay = true
 
 [connection signal="pressed" from="button_menu/Button_play" to="." method="_on_button_play_pressed"]

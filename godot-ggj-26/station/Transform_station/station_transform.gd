@@ -13,8 +13,11 @@ func doTransfoStuff():
 	var ni = item_scene_out.instantiate()
 	ni.set_as_transport()
 	ni.global_position = $"Item emplacement".global_position
+	if ni.item_ID == "mask":
+		GlobalParameter.maskcount += 1
 	item_in = ni
 	get_tree().current_scene.add_child(ni)
+	$Random1.play()
 
 
 

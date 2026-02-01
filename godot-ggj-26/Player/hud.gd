@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+func _process(delta: float) -> void:
+	$Label.text = "Mask built: " + str(GlobalParameter.maskcount)
 
 func update_time(value):
 	$ProgressBar.value = value
@@ -28,13 +30,17 @@ func _on_max_storage():
 	#$win_window.show()
 
 func _on_death(id):
+	get_parent().get_node("Loop01").stop()
 	await get_tree().create_timer(2).timeout
+	$MaskLost.play()
 	$gameover_window.show()
 
 
 func _on_button_pressed() -> void:
+	GlobalParameter.maskcount = 0
 	get_tree().reload_current_scene()
 
 
 func _on_button_3_pressed() -> void:
+	GlobalParameter.maskcount = 0
 	get_tree().change_scene_to_file("res://Menu/Landing_menu.tscn")

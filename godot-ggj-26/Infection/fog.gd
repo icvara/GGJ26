@@ -57,6 +57,8 @@ func _process(delta: float) -> void:
 			c.a = clamp(c.a - 0.2, 0, 0.9)
 			mat.albedo_color = c
 			if c.a == 0:
+				$Atmosphere.stop()
+
 				isDeactive = false
 				light1.light_color = Color(1.0, 1.0, 1.0, 1.0)
 				light2.light_color = Color(1.0, 1.0, 1.0, 1.0)
@@ -65,7 +67,10 @@ func _process(delta: float) -> void:
 func Activate():
 	light1.light_color = Color(0.984, 0.0, 0.0, 1.0)
 	light2.light_color = Color(0.984, 0.0, 0.0, 1.0)
-	await get_tree().create_timer(5).timeout
+	$Countdown1.play()
+	$Atmosphere.play()
+
+	await get_tree().create_timer(3).timeout
 	isActive = true
 
 				

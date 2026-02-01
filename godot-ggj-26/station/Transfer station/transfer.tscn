@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1ojckm40y7bp"]
 
 [ext_resource type="Script" uid="uid://bb081e055ewt0" path="res://station/Transfer station/transfer.gd" id="1_oswul"]
+[ext_resource type="AudioStream" uid="uid://dpx5nny6phy0s" path="res://SFX/In-game/Spray_can.mp3" id="2_6ekwt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oswul"]
 size = Vector3(1.5, 3, 3)
@@ -31,3 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.478778, -1.4606495, 0)
 
 [node name="posB" type="Node3D" parent="." unique_id=583957484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0817792, -0.9652047, 0)
+
+[node name="SprayCan" type="AudioStreamPlayer" parent="." unique_id=152791837]
+stream = ExtResource("2_6ekwt")

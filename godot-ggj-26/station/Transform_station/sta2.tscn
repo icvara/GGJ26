@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://e0mym0k22jev" path="res://station/Transform_station/station_transform.gd" id="1_s727n"]
 [ext_resource type="PackedScene" uid="uid://cbjn8f4b2wpym" path="res://items/object_3.tscn" id="2_ppbmh"]
+[ext_resource type="AudioStream" uid="uid://7rkb4wtoxmkv" path="res://SFX/Random/Random_1.mp3" id="3_ppbmh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tx3ea"]
 albedo_color = Color(0.6739906, 0.1961233, 0.2540228, 1)
@@ -28,3 +29,6 @@ shape = SubResource("ConcavePolygonShape3D_s727n")
 
 [node name="Item emplacement" type="Node3D" parent="." unique_id=1894577196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1550689, 0.4638182, 0)
+
+[node name="Random1" type="AudioStreamPlayer" parent="." unique_id=2056035804]
+stream = ExtResource("3_ppbmh")

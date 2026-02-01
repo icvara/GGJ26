@@ -5,7 +5,8 @@ var item_in_B : Node3D
 
 
 func Transfer():
-	
+	$SprayCan.play()
+	await get_tree().create_timer(0.5).timeout
 	if item_in_A:
 		item_in_A.global_position = $posB.global_position
 		item_in_A = null

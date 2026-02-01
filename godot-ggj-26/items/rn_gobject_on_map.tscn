@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://bhc18o0uutig0"]
 
 [ext_resource type="Script" uid="uid://cqcfjg62mn13u" path="res://items/rn_gobject_on_map.gd" id="1_21cwg"]
-[ext_resource type="PackedScene" uid="uid://baig5ldsod2eb" path="res://items/object.tscn" id="2_oos6l"]
+[ext_resource type="PackedScene" uid="uid://bx27pyxxgogb0" path="res://items/object_0.tscn" id="2_dw55b"]
 
 [node name="RNGobjectOnMap" type="Node3D" unique_id=1498846755]
 script = ExtResource("1_21cwg")
-items = Array[PackedScene]([ExtResource("2_oos6l")])
+items = Array[PackedScene]([ExtResource("2_dw55b")])
+grid_size = Vector3i(1, 1, 1)
 
 [node name="Timer" type="Timer" parent="." unique_id=537582401]
-wait_time = 0.5
+wait_time = 20.0
 autostart = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1903742406]

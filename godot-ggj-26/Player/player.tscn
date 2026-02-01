@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://db776obwvfsan"]
 
 [ext_resource type="Script" uid="uid://cxoe6etd5qk7q" path="res://Player/player.gd" id="1_l8h54"]
+[ext_resource type="AudioStream" uid="uid://ir0qytlnul6e" path="res://SFX/In-game/Walking_dirt.mp3" id="2_4ntmi"]
+[ext_resource type="AudioStream" uid="uid://cqga4dhqeev3u" path="res://SFX/Random/Random_4.mp3" id="3_btcbx"]
+[ext_resource type="AudioStream" uid="uid://fq6s1a1tg141" path="res://SFX/In-game/Mask_lost.mp3" id="4_gwnis"]
+[ext_resource type="AudioStream" uid="uid://dak80nq0wfxc0" path="res://SFX/In-game/Closed_door.mp3" id="5_k53q1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
 
@@ -64,6 +68,18 @@ mesh = SubResource("BoxMesh_l8h54")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Action_Area" unique_id=1807263588]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9546015, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_4ntmi")
+
+[node name="WalkingDirt" type="AudioStreamPlayer" parent="." unique_id=1243386401]
+stream = ExtResource("2_4ntmi")
+
+[node name="pickup" type="AudioStreamPlayer" parent="." unique_id=536763868]
+stream = ExtResource("3_btcbx")
+
+[node name="MaskLost" type="AudioStreamPlayer" parent="." unique_id=1135665909]
+stream = ExtResource("4_gwnis")
+
+[node name="maskup" type="AudioStreamPlayer" parent="." unique_id=1663047985]
+stream = ExtResource("5_k53q1")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

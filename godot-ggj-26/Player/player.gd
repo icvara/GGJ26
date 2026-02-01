@@ -168,6 +168,7 @@ func _physics_process(delta):
 func Die():
 	player_has_died.emit(playerID)
 	rotate_z(deg_to_rad(90))
+	$MaskLost.play()
 	'if has_node("infection"):
 		$DebugLabel.text = str("was INFECTED")
 	else:
@@ -185,6 +186,7 @@ func drop_item():
 		item_hold = null
 
 func collect_item(item):
+	$pickup.play()
 	if item_hold != null:
 		drop_item()
 		
@@ -203,6 +205,7 @@ func collect_item(item):
 func put_mask():
 	if item_hold:
 		if item_hold.item_ID == "mask":
+			$maskup.play()
 			item_hold.rotation = Vector3(0,0,0)
 			put_on_mask(item_hold)
 			item_hold = null
@@ -210,6 +213,8 @@ func put_mask():
 func remove_mask():
 	if mask_equipped:
 		if !item_hold:
+			$maskup.play()
+
 			item_hold = mask_equipped
 			mask_equipped = null
 	
