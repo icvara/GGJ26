@@ -11,4 +11,5 @@ script = ExtResource("1_w3vmh")
 rooms = Array[PackedScene]([ExtResource("2_3rqt4"), ExtResource("3_3rqt4"), ExtResource("3_y0iey")])
 
 [node name="infection_fog" parent="." unique_id=1722321046 instance=ExtResource("3_11uwa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.2144485, 0.19617033)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19.639668, 0.19617033)
+visible = false

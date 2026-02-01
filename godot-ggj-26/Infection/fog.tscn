@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bu5wb2a17tei0"]
+
+[ext_resource type="Script" uid="uid://ct20jem3wl63y" path="res://Infection/fog.gd" id="1_oxuw5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfu5y"]
+transparency = 1
+albedo_color = Color(0.39215687, 0, 0.39215687, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qfu5y"]
+material = SubResource("StandardMaterial3D_qfu5y")
+size = Vector3(11, 6, 16)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_510fk"]
+data = PackedVector3Array(-5.5, 3, 8, 5.5, 3, 8, -5.5, -3, 8, 5.5, 3, 8, 5.5, -3, 8, -5.5, -3, 8, 5.5, 3, -8, -5.5, 3, -8, 5.5, -3, -8, -5.5, 3, -8, -5.5, -3, -8, 5.5, -3, -8, 5.5, 3, 8, 5.5, 3, -8, 5.5, -3, 8, 5.5, 3, -8, 5.5, -3, -8, 5.5, -3, 8, -5.5, 3, -8, -5.5, 3, 8, -5.5, -3, -8, -5.5, 3, 8, -5.5, -3, 8, -5.5, -3, -8, 5.5, 3, 8, -5.5, 3, 8, 5.5, 3, -8, -5.5, 3, 8, -5.5, 3, -8, 5.5, 3, -8, -5.5, -3, 8, 5.5, -3, 8, -5.5, -3, -8, 5.5, -3, 8, 5.5, -3, -8, -5.5, -3, -8)
+
+[node name="Fog" type="Node3D" unique_id=1740693733]
+script = ExtResource("1_oxuw5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=345345507]
+mesh = SubResource("BoxMesh_qfu5y")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=850574544]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1283948092]
+shape = SubResource("ConcavePolygonShape3D_510fk")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
