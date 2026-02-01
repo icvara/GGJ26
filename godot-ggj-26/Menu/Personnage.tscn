@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dubd4xbb1uqsj" path="res://Menu/personnage.gd" id="1_bfogk"]
 [ext_resource type="Texture2D" uid="uid://cb4j02g5gihcr" path="res://IMG_3313.jpg" id="1_lhjcd"]
+[ext_resource type="AudioStream" uid="uid://mwend2kl8t21" path="res://SFX/Random/Random_3.mp3" id="3_c834w"]
 
 [node name="personnage" type="Control" unique_id=547957532]
 layout_mode = 3
@@ -16,6 +17,7 @@ script = ExtResource("1_bfogk")
 layout_mode = 0
 offset_right = 1172.0
 offset_bottom = 676.0
+color = Color(0.5449743, 0.54497427, 0.54497427, 1)
 
 [node name="Img3313" type="Sprite2D" parent="." unique_id=2016813792]
 position = Vector2(291, 281)
@@ -46,5 +48,8 @@ offset_right = 899.96
 offset_bottom = 605.448
 theme_override_font_sizes/font_size = 32
 text = "Back"
+
+[node name="Random3" type="AudioStreamPlayer" parent="." unique_id=473869746]
+stream = ExtResource("3_c834w")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
